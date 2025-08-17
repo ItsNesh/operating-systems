@@ -17,9 +17,9 @@ Content Type: Mixed
 
 1. [Comprehensive Study Notes: Week 1 - Operating Systems Fundamentals](#comprehensive-study-notes-week-1---operating-systems-fundamentals)
 2. [Week 1: Introduction to Operating Systems - Processes and Virtualization](#week-1-introduction-to-operating-systems---processes-and-virtualization)
-3. [Chapter Title](#chapter-title)
-4. [H1 - Main Title](#h1---main-title)
-5. [Chapter 4: The Abstraction: The Process](#chapter-4-the-abstraction-the-process)
+3. [Comprehensive Study Notes: CPU Mechanisms – Limited Direct Execution](#comprehensive-study-notes-cpu-mechanisms--limited-direct-execution)
+4. [Comprehensive Study Notes: Introduction to Operating Systems (Week 1)](#comprehensive-study-notes-introduction-to-operating-systems-week-1)
+5. [Comprehensive Study Notes: Chapter 4 - The Abstraction: The Process](#comprehensive-study-notes-chapter-4---the-abstraction-the-process)
 
 
 ---
@@ -669,11 +669,7 @@ Imagine you're designing a simple operating system for a single-core processor:
 
 ---
 
-# Chapter Title
-
-
-
-# Comprehensive Study Notes: CPU Mechanisms – Limited Direct Execution  
+# Comprehensive Study Notes: CPU Mechanisms – Limited Direct Execution
 
 ---
 
@@ -931,10 +927,6 @@ graph TD
 
 
 ---
-
-# H1 - Main Title
-
-
 
 # Comprehensive Study Notes: Introduction to Operating Systems (Week 1)
 
@@ -1330,11 +1322,7 @@ int main(int argc, char *argv[]) {
 
 ---
 
-# Chapter 4: The Abstraction: The Process
-
-
-
-# Comprehensive Study Notes: Chapter 4 - The Abstraction: The Process  
+# Comprehensive Study Notes: Chapter 4 - The Abstraction: The Process
 
 ---
 

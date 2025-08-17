@@ -16,18 +16,14 @@ Content Type: Mixed
 ## 📚 Table of Contents
 
 1. [Week 2: Lecture 2 - Operating Systems Scheduling](#week-2-lecture-2---operating-systems-scheduling)
-2. [Comprehensive Study Notes: CPU Scheduling (Week 2)](#comprehensive-study-notes-cpu-scheduling-(week-2))
-3. [Hierarchical Headers](#hierarchical-headers)
-4. [Comprehensive Study Notes: Multi-Level Feedback Queue (MLFQ) Scheduling](#comprehensive-study-notes-multi-level-feedback-queue-(mlfq)-scheduling)
-5. [Heading for main section](#heading-for-main-section)
+2. [Comprehensive Study Notes: CPU Scheduling](#comprehensive-study-notes-cpu-scheduling)
+3. [Comprehensive Study Notes: Scheduling - Proportional Share](#comprehensive-study-notes-scheduling---proportional-share)
+4. [Comprehensive Study Notes: Multi-Level Feedback Queue (MLFQ) Scheduling](#comprehensive-study-notes-multi-level-feedback-queue-mlfq-scheduling)
+5. [Comprehensive Study Notes: The Abstraction – Address Spaces](#comprehensive-study-notes-the-abstraction--address-spaces)
 6. [Comprehensive Study Notes: Virtual Memory Mechanism - Address Translation](#comprehensive-study-notes-virtual-memory-mechanism---address-translation)
 
 
 ---
-
-# Week 2: Lecture 2 - Operating Systems Scheduling
-
-
 
 # Week 2: Lecture 2 - Operating Systems Scheduling
 
@@ -408,11 +404,7 @@ Calculate:
 
 ---
 
-# Comprehensive Study Notes: CPU Scheduling (Week 2)
-
-
-
-# Comprehensive Study Notes: CPU Scheduling  
+# Comprehensive Study Notes: CPU Scheduling
 *Based on Textbook Chapter "Week 2: Cpu Sched"*
 
 ---
@@ -497,11 +489,7 @@ Calculate:
 
 ---
 
-# Hierarchical Headers
-
-
-
-# Comprehensive Study Notes: Scheduling - Proportional Share  
+# Comprehensive Study Notes: Scheduling - Proportional Share
 
 ---
 
@@ -722,10 +710,6 @@ schedule(current); // Run the winning process
 ---
 
 # Comprehensive Study Notes: Multi-Level Feedback Queue (MLFQ) Scheduling
-
-
-
-# Comprehensive Study Notes: Multi-Level Feedback Queue (MLFQ) Scheduling  
 *Based on OSTEP Chapter "Scheduling: The Multi-Level Feedback Queue"*
 
 ---
@@ -978,11 +962,7 @@ schedule(current); // Run the winning process
 
 ---
 
-# Heading for main section
-
-
-
-# Comprehensive Study Notes: The Abstraction – Address Spaces  
+# Comprehensive Study Notes: The Abstraction – Address Spaces
 *Based on Chapter 13 from "Operating Systems: A Modern Perspective"*
 
 ---

@@ -15,16 +15,12 @@ Content Type: Mixed
 
 ## 📚 Table of Contents
 
-1. [H1 Title: Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables](#h1-title-week-7---memory-management-segmentation-paging-&-multi-level-page-tables)
-2. [Comprehensive Study Notes: Paging](#comprehensive-study-notes-paging)
+1. [Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables](#week-7---memory-management-segmentation-paging--multi-level-page-tables)
+2. [Comprehensive Study Notes: Paging in Operating Systems](#comprehensive-study-notes-paging-in-operating-systems)
 3. [Week 3: Textbook Segmentation - Comprehensive Study Notes](#week-3-textbook-segmentation---comprehensive-study-notes)
 
 
 ---
-
-# H1 Title: Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables
-
-
 
 # Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables
 
@@ -256,11 +252,7 @@ Each entry contains:
 
 ---
 
-# Comprehensive Study Notes: Paging
-
-
-
-# Comprehensive Study Notes: Paging in Operating Systems  
+# Comprehensive Study Notes: Paging in Operating Systems
 *Based on OSTEP Chapter 18 (Version 1.10)*  
 
 ---
@@ -517,10 +509,6 @@ for (i = 0; i < 1000; i++)
 ---
 
 # Week 3: Textbook Segmentation - Comprehensive Study Notes
-
-
-
-# Week 3: Textbook Segmentation - Comprehensive Study Notes  
 
 ---
 
