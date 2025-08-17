@@ -350,10 +350,10 @@ VP0 → PF3, VP1 → PF7, VP2 → PF5, VP3 → PF2
 ##### **Hardware Translation Flow**  
 ```mermaid
 graph LR
-    A[Virtual Address] --> B{Split into VPN & Offset}
+    A[Virtual Address] --> B{Split into VPN and Offset}
     B --> C[Page Table Lookup]
     C --> D[Physical Frame Number PFN]
-    D --> E[Combine with Offset: PhysAddr = (PFN << SHIFT) | OFFSET]
+    D --> E["Combine with Offset: PhysAddr = (PFN &lt;&lt; SHIFT) \| OFFSET"]
 ```
 
 > 💡 **Key Formula**:  
