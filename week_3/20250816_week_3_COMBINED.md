@@ -15,53 +15,12 @@ Content Type: Mixed
 
 ## 📚 Table of Contents
 
-1. [H1 Title: Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables](#h1-title-week-7---memory-management-segmentation-paging-&-multi-level-page-tables)
-2. [Comprehensive Study Notes: Paging](#comprehensive-study-notes-paging)
+1. [Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables](#week-7---memory-management-segmentation-paging--multi-level-page-tables)
+2. [Comprehensive Study Notes: Paging in Operating Systems](#comprehensive-study-notes-paging-in-operating-systems)
 3. [Week 3: Textbook Segmentation - Comprehensive Study Notes](#week-3-textbook-segmentation---comprehensive-study-notes)
 
 
 ---
-
-# H1 Title: Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables
-
-<think>
-I need to create comprehensive educational notes based on the transcript of a lecture about memory management concepts like segmentation, paging, and multi-level page tables.
-
-Let me analyze what I have:
-
-The lecture covers:
-1. Segmentation (breaking memory into segments)
-2. Paging (dividing memory into fixed-size pages)
-3. Multi-level page tables (a solution to the large table problem)
-
-I'll create a well-structured document with clear headings, key insights from the instructor's explanations, and practical examples.
-
-Let me organize this information:
-
-
-### Overview
-This lecture covers memory management concepts including segmentation (breaking memory into variable-sized segments), paging (dividing memory into fixed-size pages), and multi-level page tables (a solution to the large table problem in traditional paging). The instructor explains why these approaches were developed, their advantages and disadvantages, and how they solve specific problems related to external fragmentation.
-
-Now I'll create detailed sections based on the content:
-
-#### Key Concepts from the Lecture:
-- Segmentation: Breaking memory into variable-sized segments (code, data, stack)
-- Paging: Dividing memory into fixed-size pages
-- External Fragmentation: Wasted space between allocated blocks
-- Internal Fragmentation: Wasted space within a block
-
-I'll create detailed sections for each concept with explanations from the transcript.
-
-Let me structure this as requested:
-
-1. Start with clear H1 title including week and lecture information
-2. Add "## Overview" section immediately after title
-3. Use hierarchical headers to organize content logically
-4. Include key insights formatted correctly (with Instructor Emphasis, Student Questions, etc.)
-5. Create a comprehensive summary at the end
-
-I'll now create these sections with detailed explanations based on the transcript.
-</think>
 
 # Week 7 - Memory Management: Segmentation, Paging & Multi-Level Page Tables
 
@@ -293,81 +252,7 @@ Each entry contains:
 
 ---
 
-# Comprehensive Study Notes: Paging
-
-<think>
-We are creating comprehensive study notes for "Week 3: Textbook Paging" based on the provided slides.
-
-The chapter covers:
-1. Introduction to paging as an alternative to segmentation.
-2. The concept of fixed-sized pages and page frames.
-3. Page tables for mapping virtual pages to physical frames.
-4. Address translation process (VPN, offset).
-5. Storage of page tables in memory.
-6. Contents of a page table entry (PTE) including bits like valid, present, dirty, etc.
-7. Performance issues with paging: extra memory accesses and large size.
-8. A detailed example tracing memory accesses.
-
-We must cover every slide and extract all concepts, examples, theories, principles, and include ALL case studies.
-
-Let's break down the notes by sections as per the slides.
-
-Note: The textbook is "Operating Systems: Three Easy Pieces" (OSTEP) version 1.10.
-
-Structure of our study notes:
-
-
-### I. Introduction to Paging
-- Why paging? Contrast with segmentation.
-- Key terms: page, page frame, virtual address space, physical memory.
-
-### II. Basic Concepts and Example
-- The simple example (64-byte address space, 16-byte pages).
-- Physical memory layout (128 bytes, 8 frames).
-
-### III. Page Tables
-- Definition and purpose.
-- Structure: linear page table as an array indexed by VPN.
-- Contents of a PTE.
-
-### IV. Address Translation Process
-- Breaking down virtual address into VPN and offset.
-- Step-by-step translation example (address 21).
-- Hardware process for translation.
-
-### V. Page Table Storage and Size Issues
-- Where are page tables stored? In physical memory.
-- Why large size is a problem: e.g., 32-bit with 4KB pages -> ~4MB per table, 100 processes = 400 MB just for page tables.
-
-### VI. Contents of Page Table Entries (PTEs)
-- Detailed breakdown of bits in an x86 PTE.
-- Valid bit vs present bit discussion.
-
-### VII. Performance Issues: The Two Problems
-- Extra memory access per reference (slowing down).
-- Memory waste from storing large page tables.
-
-### VIII. Memory Trace Example
-- Tracing a loop that initializes an array.
-- Step-by-step of the 10 memory accesses in one iteration.
-
-### IX. Summary and Key Takeaways
-
-### X. Study Questions (15-20)
-
-Let's now create detailed notes for each section, ensuring we cover every point from the slides.
-
-We'll use:
-- Bold for key terms.
-- Tables where appropriate (e.g., PTE bits).
-- Formulas: e.g., how to compute VPN and offset.
-
-Note: The chapter uses "page table" as a per-process data structure. We must emphasize that.
-
-Let's begin.
-</think>
-
-# Comprehensive Study Notes: Paging in Operating Systems  
+# Comprehensive Study Notes: Paging in Operating Systems
 *Based on OSTEP Chapter 18 (Version 1.10)*  
 
 ---
@@ -457,10 +342,10 @@ VP0 → PF3, VP1 → PF7, VP2 → PF5, VP3 → PF2
 ##### **Hardware Translation Flow**  
 ```mermaid
 graph LR
-    A[Virtual Address] --> B{Split into VPN & Offset}
+    A[Virtual Address] --> B{Split into VPN and Offset}
     B --> C[Page Table Lookup]
     C --> D[Physical Frame Number PFN]
-    D --> E[Combine with Offset: PhysAddr = (PFN << SHIFT) | OFFSET]
+    D --> E["Combine with Offset: PhysAddr = (PFN &lt;&lt; SHIFT) \| OFFSET"]
 ```
 
 > 💡 **Key Formula**:  
@@ -624,143 +509,6 @@ for (i = 0; i < 1000; i++)
 ---
 
 # Week 3: Textbook Segmentation - Comprehensive Study Notes
-
-<think>
-We are creating comprehensive study notes for Chapter 3 (Week 3) titled "Textbook Segmentation" based on the provided slides.
-
-The chapter covers:
-1. The problem with base and bounds memory management (waste of space between stack and heap, inability to handle large address spaces that don't fit in physical memory).
-2. Introduction to segmentation as a solution.
-3. How segmentation works: multiple segments (code, data/heap, stack) each with their own base and bounds registers.
-4. Address translation for segmented systems (with examples of code segment, heap, and stack).
-5. Handling the stack growth direction (negative growth).
-6. Sharing via protection bits (read-only for code sharing).
-7. Fine-grained vs coarse-grained segmentation.
-8. OS support: context switching, growing segments, managing free space (external fragmentation) and solutions (compaction, allocation algorithms).
-
-We must cover every slide in detail.
-
-Let's break it down by the slides:
-
-Slide 1:
-- Problem with base/bounds: entire address space is moved as one block -> waste of physical memory for unused regions (like between stack and heap).
-- Example: 32-bit address space (4GB) but program only uses MBs -> requires 4GB in RAM, which is wasteful.
-- The crux: How to support a large address space with free space without wasting physical memory.
-
-Slide 2:
-- Segmentation idea: instead of one base/bounds pair for the whole process, have per-segment (code, heap, stack) pairs.
-- Example figure (Fig 16.1): Address Space showing code, heap (free), and stack in a typical layout.
-- Fig 16.2: Physical memory with segments placed without wasting space.
-
-Slide 3:
-- Hardware structure: three base/bounds register pairs for the three segments.
-- Table of segment registers (Fig 16.3): Code at 32K, size 2K; Heap at 34K, size 3K; Stack at 28K, size 2K.
-
-Slide 4:
-- Example translation: 
-   - Virtual address 100 in code segment -> physical = base (32K) + offset (100) = 32KB+100=32868.
-   - Heap example: virtual address 4200. Since heap starts at 4KB, the offset is 4200-4096=104 -> physical = 34K + 104 = 34920.
-- Segmentation fault when out of bounds.
-
-Slide 5:
-- How hardware knows which segment: explicit approach (using top bits) vs implicit approach.
-   - Explicit: use top two bits to select one of four segments (but we have three, so one unused). 
-        Example: virtual address 4200 -> binary: ...01 followed by offset. Top two bits=01 for heap.
-   - Algorithm in code (with constants).
-   - Limitation: segment size limited by the number of top bits used.
-
-Slide 6:
-- Stack growth direction: grows backwards (toward lower addresses). 
-   - Hardware needs to know if a segment grows positively or negatively (via an extra bit).
-   - Example: virtual address 15KB for stack -> binary ...11. Top two bits=11 for stack. Offset = 3KB, but since it's negative growth, we compute the offset as max_size - offset? Actually: 
-        The segment size is 2K (max 4K), so the physical address calculation:
-          base + (-offset) where offset = (segment_max - virtual_offset_in_segment)
-        But note: in the example, they subtracted the maximum from the offset to get a negative value.
-
-Slide 7:
-- Sharing via protection bits: e.g., code segment set as read-only so multiple processes can share it.
-   - Figure 16.5 shows additional "Protection" field (Read-Execute for code).
-
-Slide 8:
-- Fine-grained vs coarse-grained segmentation: 
-   - Coarse: few segments (code, heap, stack) -> common in early systems like Multics? Actually the text says Multics had fine-grained.
-   - Fine: many small segments (e.g., thousands of segments for code and data per process). Example: Burroughs B5000.
-
-Slide 9:
-- OS support issues:
-   a. Context switch: save/restore segment registers.
-   b. Growing segments (heap expansion via sbrk() system call).
-   c. Managing free space in physical memory -> external fragmentation problem.
-
-Slide 10:
-- External fragmentation example (Fig 16.6): non-compacted vs compacted memory.
-- Solutions: compaction (expensive) or allocation algorithms (best-fit, worst-fit, first-fit, buddy system).
-
-Slide 11:
-- Summary of segmentation benefits and problems (external fragmentation, inflexibility for sparse heaps).
-- References to papers.
-
-Slide 12:
-- Homework simulation questions.
-
-Now we create the study notes in markdown with hierarchical headers, bold key terms, tables, etc.
-
-We'll structure as:
-
-
-### I. The Problem with Base/Bounds Memory Management
-[Explain the problem from Slide 1]
-
-### II. Introduction to Segmentation
-[Slide 2 and beginning of Slide 3]
-
-### III. How Segmentation Works: Address Translation
-[Slides 3,4,5,6 - detailed translation examples]
-
-#### A. Hardware Structure for Segmentation
-- Table (Fig 16.3)
-
-#### B. Example Translations
-- Code segment example
-- Heap segment example
-- Stack segment example
-
-### IV. Segment Selection: Explicit vs Implicit Approaches
-[Slide 5 and part of Slide 6?]
-
-### V. Handling the Stack Growth Direction
-[Slide 6 - negative growth]
-
-### VI. Support for Sharing via Protection Bits
-[Slide 7]
-
-### VII. Fine-grained vs Coarse-grained Segmentation
-[Slide 8]
-
-### VIII. OS Support Requirements and Challenges
-[Slides 9,10]
-
-#### A. Context Switching
-#### B. Growing/ Shrinking Segments (e.g., heap expansion)
-#### C. Managing Free Space: External Fragmentation
-
-##### 1. The Problem of External Fragmentation
-- Example with Fig 16.6
-- Solutions:
-   - Compaction (with cost analysis)
-   - Memory allocation algorithms (best-fit, worst-fit, first-fit, buddy system)
-
-### IX. Summary and Limitations of Segmentation
-[Slide 10]
-
-### X. Study Questions (15-20 questions for exam preparation)
-
-Let's write the notes accordingly.
-
-Note: We must include every example and case study from the slides.
-</think>
-
-# Week 3: Textbook Segmentation - Comprehensive Study Notes  
 
 ---
 

@@ -5,78 +5,7 @@ Model: qwen3:30b
 Output Mode: Comprehensive
 -->
 
-<think>
-We are creating comprehensive study notes for "Week 3: Textbook Paging" based on the provided slides.
 
-The chapter covers:
-1. Introduction to paging as an alternative to segmentation.
-2. The concept of fixed-sized pages and page frames.
-3. Page tables for mapping virtual pages to physical frames.
-4. Address translation process (VPN, offset).
-5. Storage of page tables in memory.
-6. Contents of a page table entry (PTE) including bits like valid, present, dirty, etc.
-7. Performance issues with paging: extra memory accesses and large size.
-8. A detailed example tracing memory accesses.
-
-We must cover every slide and extract all concepts, examples, theories, principles, and include ALL case studies.
-
-Let's break down the notes by sections as per the slides.
-
-Note: The textbook is "Operating Systems: Three Easy Pieces" (OSTEP) version 1.10.
-
-Structure of our study notes:
-
-# Comprehensive Study Notes: Paging
-
-## I. Introduction to Paging
-- Why paging? Contrast with segmentation.
-- Key terms: page, page frame, virtual address space, physical memory.
-
-## II. Basic Concepts and Example
-- The simple example (64-byte address space, 16-byte pages).
-- Physical memory layout (128 bytes, 8 frames).
-
-## III. Page Tables
-- Definition and purpose.
-- Structure: linear page table as an array indexed by VPN.
-- Contents of a PTE.
-
-## IV. Address Translation Process
-- Breaking down virtual address into VPN and offset.
-- Step-by-step translation example (address 21).
-- Hardware process for translation.
-
-## V. Page Table Storage and Size Issues
-- Where are page tables stored? In physical memory.
-- Why large size is a problem: e.g., 32-bit with 4KB pages -> ~4MB per table, 100 processes = 400 MB just for page tables.
-
-## VI. Contents of Page Table Entries (PTEs)
-- Detailed breakdown of bits in an x86 PTE.
-- Valid bit vs present bit discussion.
-
-## VII. Performance Issues: The Two Problems
-- Extra memory access per reference (slowing down).
-- Memory waste from storing large page tables.
-
-## VIII. Memory Trace Example
-- Tracing a loop that initializes an array.
-- Step-by-step of the 10 memory accesses in one iteration.
-
-## IX. Summary and Key Takeaways
-
-## X. Study Questions (15-20)
-
-Let's now create detailed notes for each section, ensuring we cover every point from the slides.
-
-We'll use:
-- Bold for key terms.
-- Tables where appropriate (e.g., PTE bits).
-- Formulas: e.g., how to compute VPN and offset.
-
-Note: The chapter uses "page table" as a per-process data structure. We must emphasize that.
-
-Let's begin.
-</think>
 
 # Comprehensive Study Notes: Paging in Operating Systems  
 *Based on OSTEP Chapter 18 (Version 1.10)*  
@@ -168,10 +97,10 @@ VP0 → PF3, VP1 → PF7, VP2 → PF5, VP3 → PF2
 #### **Hardware Translation Flow**  
 ```mermaid
 graph LR
-    A[Virtual Address] --> B{Split into VPN & Offset}
+    A[Virtual Address] --> B{Split into VPN and Offset}
     B --> C[Page Table Lookup]
     C --> D[Physical Frame Number PFN]
-    D --> E[Combine with Offset: PhysAddr = (PFN << SHIFT) | OFFSET]
+    D --> E["Combine with Offset: PhysAddr = (PFN &lt;&lt; SHIFT) \| OFFSET"]
 ```
 
 > 💡 **Key Formula**:  
