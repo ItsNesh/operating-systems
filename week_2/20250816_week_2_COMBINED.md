@@ -163,21 +163,26 @@ When a long job arrives first, it "blocks" shorter jobs that arrive later.
 
 ---
 
-#### Round Robin (RR)
-**Concept**: Each job gets a fixed time slice before being preempted.
+### Round Robin (Quantum = 2, No Context Switch Cost)
 
-##### Example Calculation:
-| Job | Arrival Time | Burst Time | Completion Time | Turnaround Time | Response Time |
-|-----|--------------|------------|-----------------|-----------------|---------------|
-| A   | 0            | 10         | 26              | 26              | 0             |
-| B   | 2            | 10         | 28              | 26              | 0             |
-| C   | 4            | 10         | 30              | 26              | 0             |
+| Job | Arrival | Burst | Completion | Turnaround | Response |
+|-----|----------|--------|-------------|-------------|-----------|
+| A   | 0        | 10     | 24          | 24          | 0         |
+| B   | 2        | 10     | 28          | 26          | 0         |
+| C   | 4        | 10     | 30          | 26          | 2         |
 
-**Average Response Time**: (0 + 0 + 0) / 3 = **0**
+**Execution order (q = 2):**  
+A(0–2), B(2–4), A(4–6), C(6–8), B(8–10), A(10–12), C(12–14),  
+B(14–16), A(16–18), C(18–20), B(20–22), A(22–24 ✅ finishes),  
+C(24–26), B(26–28 ✅ finishes), C(28–30 ✅ finishes).
+
+**Explanation:**  
+- Each job receives 2 ms per turn in the ready queue.  
+- A finishes after 5 quanta (24 ms total), B after 5 rounds (28 ms), C after 5 rounds (30 ms).  
+- Response time reflects when each job first started (C’s first slice begins at 6 ms → response = 2).  
+- Turnaround = Completion − Arrival.
 
 > *Instructor Insight*: "Round Robin gives everyone a fair chance, but it can lead to long turnaround times if the time slice is too short. The key challenge is determining how often to switch between processes."
-
-> **Assumptions for This Example**: Using a 2 ms time slice (with zero context-switch cost) causes each job to receive five quanta before finishing, so their completion times land at 26 ms, 28 ms, and 30 ms respectively.
 
 ##### Picking a Time Quantum That Works
 > **Additional Explanation (not in source_files)**
