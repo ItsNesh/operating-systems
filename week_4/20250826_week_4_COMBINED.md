@@ -119,11 +119,12 @@ When the CPU needs to translate an address:
 *Instructor Insight*: "A TLB miss is like asking for a book in a library and having to check the catalog first—much slower than just knowing where it's on the shelf."
 
 #### What Happens During a TLB Miss?
+> **Additional Explanation (not in source_files)**
 1. **Page-table walk**: Hardware-managed CPUs (x86/ARMv8) automatically fetch each page-table level from memory; software-managed CPUs (MIPS/SPARC) trap to the OS, which performs the walk in software.
 2. **Latency impact**: Four memory references at ~100 ns each add ~400 ns before the original access even begins. At 1% miss rate this inflates average access time from ~1 cycle to ~5 cycles; at 5% misses it can exceed 20 cycles.
 3. **Page-fault check**: If the page-table entry marks the page absent, the miss handler must trigger the full page-fault path to fetch it from disk—orders of magnitude slower than a translation miss.
 
-> 🛠️ **Hardware vs. Software**: Hardware-managed TLBs hide the miss machinery but are inflexible. Software-managed TLBs let the OS implement custom replacement policies at the cost of taking a trap on every miss.
+> **Additional Explanation (not in source_files)**: Hardware-managed TLBs hide the miss machinery but are inflexible. Software-managed TLBs let the OS implement custom replacement policies at the cost of taking a trap on every miss.
 
 #### Content Addressable Memory (CAM)
 Unlike regular memory that uses addresses, CAM searches by content. The TLB uses this principle:

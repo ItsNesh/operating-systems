@@ -658,6 +658,7 @@ The data structure storing all information about a process:
 ---
 
 ### Deep Dive: How the OS Places Processes in Memory
+> **Additional Explanation (not in source_files)**
 
 The OS must reconcile a program's assumptions about its address space with the actual physical memory layout.
 
@@ -680,6 +681,7 @@ The OS must reconcile a program's assumptions about its address space with the a
 > `0x9000_0000`, the page-table entry ensures the virtual address still works even though the underlying RAM differs.
 
 ### Deep Dive: Work the OS Performs During Process Creation
+> **Additional Explanation (not in source_files)**
 
 | Loader Step | Detailed Action | Why It Matters |
 |-------------|-----------------|----------------|
@@ -692,6 +694,7 @@ The OS must reconcile a program's assumptions about its address space with the a
 > 🔁 **Takeaway**: Process creation is as much about *address translation* and *metadata setup* as it is about copying bytes.
 
 ### Hidden Hardware Costs of Context Switching
+> **Additional Explanation (not in source_files)**
 
 - **TLB Flushes**: Switching address spaces invalidates cached translations, forcing slow page-table walks until the TLB warms up.
 - **Cache & Pipeline Disruption**: The next process experiences cold instruction/data caches and must refill CPU pipelines before

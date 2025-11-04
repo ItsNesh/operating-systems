@@ -159,7 +159,7 @@ When a long job arrives first, it "blocks" shorter jobs that arrive later.
 
 > *Instructor Insight*: "STCF is preemptive, meaning it can interrupt a running process to run a shorter one. This gives better response times but requires more context switching."
 
-> ⚠️ **Watch the Definitions**: Completion time is the clock reading when a job finishes. Turnaround time is completion minus arrival. The slide deck assumes every job arrives at time 0, so the two columns match. If you instead respect the arrival times shown here (0, 2, 4), the turnaround values become 10, 16, and 22 seconds even though the completion times are still 10, 18, and 26. Always subtract the arrival time when solving exam problems.
+> **Additional Explanation (not in source_files)**: Completion time is the clock reading when a job finishes. Turnaround time is completion minus arrival. The slide deck assumes every job arrives at time 0, so the two columns match. If you instead respect the arrival times shown here (0, 2, 4), the turnaround values become 10, 16, and 22 seconds even though the completion times are still 10, 18, and 26. Always subtract the arrival time when solving exam problems.
 
 ---
 
@@ -178,6 +178,7 @@ When a long job arrives first, it "blocks" shorter jobs that arrive later.
 > *Instructor Insight*: "Round Robin gives everyone a fair chance, but it can lead to long turnaround times if the time slice is too short. The key challenge is determining how often to switch between processes."
 
 ##### Picking a Time Quantum That Works
+> **Additional Explanation (not in source_files)**
 - **Too Small** → Lots of context switches. A 5 µs switch cost with a 1 ms quantum wastes ~0.5% of CPU cycles; a 0.1 ms quantum would waste ~5%.
 - **Too Large** → Poor responsiveness. With a 100 ms quantum and 10 runnable tasks, worst-case response is about 1 second.
 - **Practical Defaults**: Mainstream OSes choose 4–20 ms quanta for interactive tasks, using longer slices for background queues.
@@ -237,6 +238,7 @@ The key innovation: **priority decreases over time** as processes use more CPU.
 > *Instructor Insight*: "The problem with dynamic priority is that if you only lose priority, eventually your process will be ignored forever."
 
 ###### Why MLFQ Needs Periodic Boosts
+> **Additional Explanation (not in source_files)**
 Consider a CPU-bound job that drops to the lowest queue after rendering frames for hours. Later the user interacts with it and it becomes I/O-bound. Without a boost, it remains stuck at the bottom, so its GUI events take ages to service. Periodic boosts let every process re-enter the top queue occasionally, proving whether its behavior changed and preventing long-term starvation of newly interactive tasks.
 
 ---

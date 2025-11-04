@@ -343,6 +343,7 @@ Checkpoint: Mark as complete
 > "Hard drives can reorder writes. To prevent this, we split the journal into 'most' and 'tail'—the tail (TXE) is written last to guarantee atomicity."
 
 #### Why Write Ordering Matters
+> **Additional Explanation (not in source_files)**
 1. **Device reordering**: Disks and SSDs reorder requests for performance; without barriers, the commit record (TxE) could reach stable storage before the data it promises.
 2. **Barriers/flushes**: Filesystems issue cache flushes or use FUA writes between data blocks and TxE so the controller can't lie about durability.
 3. **Sector atomicity limits**: Only 512-byte sectors are atomic, so TxE is squeezed into one sector to avoid tearing.
