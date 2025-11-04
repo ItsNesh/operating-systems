@@ -1,0 +1,3050 @@
+SPEAKER 0
+Oh Alright, hi everyone.
+
+SPEAKER 1
+Sorry I'm running a bit late. No, I didn't just wake up. I'm, well, my, my Fitbit keeps saying that I had
+
+SPEAKER 2
+really good sleep this week and it's lying to me
+
+SPEAKER 0
+at this point, I think, um, which is a little bit annoying, but we, we're, we're all good.
+
+SPEAKER 2
+Um, no, I just had a course design workshop where they were designing courses basically for the new university.
+
+SPEAKER 0
+It's, it's a lot of fun, not, not at all controversial, um.
+
+SPEAKER 1
+Alright, let's, so let's begin. Let's, let's think. It's week 3, right? So we have to do some housekeeping.
+
+SPEAKER 2
+What are we doing in week 3? Who, who went to a tutorial this week or a
+
+SPEAKER 0
+workshopy thing? Yeah, right, good, good students. You're at the lecture, that kind of implies you probably went.
+
+SPEAKER 1
+Um, did everyone understand the preparation participation thing, like, everyone
+
+SPEAKER 2
+took nice photos of stuff that they did, um.
+
+SPEAKER 1
+I'm discussing with my tutors what the best way of doing it is.
+
+SPEAKER 2
+I think one of the easiest thing is if you take a photo of your tutor in the tutorial, that's a good way of proving you were in your tutorial
+
+SPEAKER 0
+and that you participate so you hold up your little piece of paper and be like, look at, look at the work I did. This is my tutor, yeah.
+
+SPEAKER 1
+Um, just to make it easier for us to mark
+
+SPEAKER 2
+them, um, and, you know, to encourage people to actually
+
+SPEAKER 0
+do stuff. Um, it's a good time, uh, assignment is due at
+
+SPEAKER 2
+the end of next week, on a Sunday at 11:59
+
+SPEAKER 1
+p.m. Now, a lot of you haven't had me before, um, but basically, I always make my assignments due at
+
+SPEAKER 2
+11:59 on Sunday, um, because I don't work on the weekend, right?
+
+SPEAKER 1
+And my theory is that if a student leaves the
+
+SPEAKER 2
+assignment to the last minute, they aren't worthy of my
+
+SPEAKER 0
+help, and I'm not going to help them on the weekend. If you email or post something on Piazza, you can
+
+SPEAKER 2
+post on Piazza cos there'll be other students, you know,
+
+SPEAKER 0
+who might graciously answer your questions. But um, if you email me on a weekend um prior to the assignment being due, um, it is unlikely that you will receive a response until the Monday afterwards.
+
+SPEAKER 2
+Um, that said, I, I'll be available on the, on
+
+SPEAKER 1
+the Friday. I have to duck out early today so I can't do consultation this afternoon because my son has a uh
+
+SPEAKER 0
+has a musical at his school that I have to go to.
+
+SPEAKER 2
+As a diligent father, but I will be doing a
+
+SPEAKER 1
+consultation next week on Tuesday, um, if that doesn't suit,
+
+SPEAKER 2
+just send me an email and I'll see if I
+
+SPEAKER 0
+can organise something else, um.
+
+SPEAKER 1
+I have done, I've posted the 2nd revision quiz, so that's up. Now, the first assessed quiz is going to be soon-ish,
+
+SPEAKER 2
+um, sort of, and by soonish, I think I'm gonna make it due in week 5, right, because week 4 already has the assignment in it, and I don't want people concentrating on the quiz and the assignment at the
+
+SPEAKER 0
+same time.
+
+SPEAKER 1
+Um, basically it will be a quiz that you can
+
+SPEAKER 2
+do in your own time whenever you want, right?
+
+SPEAKER 0
+Uh, it's got like a time limit of half an
+
+SPEAKER 2
+hour.
+
+SPEAKER 1
+It's not meaningfully dissimilar to the revision quizzes except for that the questions are going to be less vague. You may notice that in the revision quizzes sometimes I
+
+SPEAKER 0
+ask vague questions. Um, this is intentional because I don't care if you
+
+SPEAKER 2
+misinterpret the question during a revision quiz. I'm just trying to get you to think, right?
+
+SPEAKER 0
+Does that make sense? Right? Like if I ask you a question, you'd be like, oh, well, technically, maybe not, maybe. I don't care about that for a revision quiz. I'd rather you go, Oh, well, actually technically, and have that discussion and then I can be like, yes, technically, very good, you understand it well.
+
+SPEAKER 1
+Um, OK, and I think, are there any other questions
+
+SPEAKER 2
+on housekeeping before I start?
+
+SPEAKER 0
+There are no other questions on housekeeping before I start. Is my microphone on? Raise your hand. Yeah, OK, it's micro. OK, so there aren't there genuinely aren't any questions.
+
+SPEAKER 2
+OK, so let's have a look, sorry, the zipping, it is actually quite warm in here.
+
+SPEAKER 1
+Alright, so what are we doing today? We're doing the address space of process. OK, so what did we do last week, last week,
+
+SPEAKER 0
+last week. Oh yeah, there we go.
+
+SPEAKER 2
+So we were going through all the algorithms for scheduling,
+
+SPEAKER 1
+right? So we did shortest job first. First come, first serve. I don't remember last week's lecture, I'm assuming that we had a lecture last week. I was really tired. Um, so what are we doing today? We're we're we're basically looking at the other part of it, right, which is the virtualization of a process, putting it into memory, right?
+
+SPEAKER 2
+So today's gonna be like a big memory discussion, and
+
+SPEAKER 1
+next week as well, right, um, although slight different nuance
+
+SPEAKER 0
+between this week and, uh, next week.
+
+SPEAKER 1
+Alright, so. If we could summarise last week as sort of a question about when, this week we can summarise as a
+
+SPEAKER 2
+question about where, right, like, so if I have a
+
+SPEAKER 1
+process and I'm gonna put it into memory, where in the memory am I gonna put it, right? And this is like, It's one of those questions where
+
+SPEAKER 2
+you're like, well, will you just put it in memory
+
+SPEAKER 0
+somewhere, right?
+
+SPEAKER 2
+You're like, oh, actually, OK, now I have to think about it, how would I do that?
+
+SPEAKER 1
+Um, and so basically the idea here is that we have memory and inside memory there are bits, right, and we're gonna, you know, divide memory up into bytes, which
+
+SPEAKER 2
+are 8 bits, and depending on our machine, we might
+
+SPEAKER 1
+have like 32 bits.
+
+SPEAKER 0
+So 4 bytes is one thing, or you can have a 64 bit machine where 8 bytes is one thing, or if you had like an 8 bit machine back in the day, you'd be like 1 bite is a
+
+SPEAKER 1
+thing, um, and if it's in memory, we have to
+
+SPEAKER 2
+be able to get to it, so we have to know where it is, so we need to have an address, right, so every, everything, every individual thing, which in
+
+SPEAKER 0
+this case I guess is words or, 32 bit things
+
+SPEAKER 1
+in memory has to have an address, so I know where to get it if I, if I want to
+
+SPEAKER 2
+get it, right? Like, so, OK, so now I have to think about
+
+SPEAKER 0
+addresses, how many addresses can I have, right, like immediately like, well, how do I store an address?
+
+SPEAKER 2
+The address is also gonna be a number. Where am I going to store the address?
+
+SPEAKER 0
+The address is also gonna be a memory. Alright, that's gonna get recursive and really confusing by the end of this lecture. Hooray, alright, so we have K-bits.
+
+SPEAKER 1
+It means we can only have 2 decay spots, right? Like if, if my, you know, it's, it's kind of like if I can only count up to 100, I can only have 100 friends, right? Because beyond that I'm like I don't know how many
+
+SPEAKER 0
+friends I have anymore, right? Um, because I'm a child, I, I can only count to 100, right? I can't have more than 100 things, I just have lots at that point in time. But with a computer, if you, if you can't count
+
+SPEAKER 1
+past 100.
+
+SPEAKER 2
+You, you just can't have that much memory, right?
+
+SPEAKER 1
+So in our case, we can only count k bits, and so we can only have 2 of the K
+
+SPEAKER 2
+spots in our memory, right? So there's some fundamental limitations that are gonna go on
+
+SPEAKER 0
+in memory like this, right, and spots in this case
+
+SPEAKER 2
+is um bytes, um, not really bytes, groups of bytes,
+
+SPEAKER 1
+um. And because just for the sake of convenience, um, for what is it? 4 bytes is 32 bits, and we're just going to talk about 32 bits. Um, main reason is because 32 bit machines were like
+
+SPEAKER 2
+really, really dominant for a very long period of time, and then when you get up to 64 bits, all
+
+SPEAKER 0
+the explanations on the board become really hard to read because 64 bits changes things a lot by a large margin, right? Like going from 32 bits to 64 bits is a big, big, big change. Um, and so we're gonna just do stuff in 32
+
+SPEAKER 2
+bit space for the moment, um, but you can like,
+
+SPEAKER 0
+you can imagine for a second that it was 64 bits and sort of extend the idea.
+
+SPEAKER 2
+Alright, so what we're gonna see this number 4 megabytes.
+
+SPEAKER 1
+Does anyone know why it's 4 megabytes? Why we're gonna see this, yes, it's to the power of 10, right? So it's 4 bytes, make 32 bits, and 2 the power of 10 is 1,0024, which together is 4,0096, which
+
+SPEAKER 0
+is 4 megabytes, right?
+
+SPEAKER 2
+Like it's, that's just gonna pop up a lot, right? Um, so that is almost a number worth just arbitrarily memorising, um.
+
+SPEAKER 0
+In fact, all the binary numbers are worth arbitrarily memorising,
+
+SPEAKER 2
+but yeah, 2 of 10 is 10 to 24.
+
+SPEAKER 1
+Um, and then 2 to 12 is 4 kilobytes, so
+
+SPEAKER 0
+we're gonna use 12 bits essentially, well, not really, the
+
+SPEAKER 2
+last two bits are about the fact that it's, you
+
+SPEAKER 0
+know, we've got 4 bytes in our memory spots.
+
+SPEAKER 2
+OK. Memory thinking, OK, so 1 bite, no, no, it's not
+
+SPEAKER 0
+really one bite. OK, so, we think about it, right, we're gonna go
+
+SPEAKER 1
+2 to the 2 bytes.
+
+SPEAKER 2
+Right, so that's 32 bits, 2 of the 10 times 210 times 2 of the well, we got a lot,
+
+SPEAKER 0
+right? Like 1,024. We got about 4 billion bytes, right?
+
+SPEAKER 2
+So 4 billion bytes about 4 gigabytes, right?
+
+SPEAKER 1
+And there was a period where a segment in a hard drive, Could never be bigger than 4 gigabytes, right?
+
+SPEAKER 0
+Like as in you there was a point where you'd
+
+SPEAKER 2
+be like, well, I, I don't know what to do. I don't know how to deal with more than 4
+
+SPEAKER 0
+gigabytes of memory, like the, the, the operating system would be like, I don't even know what that means. I can't count that high, right?
+
+SPEAKER 2
+I can't deal with more than 4 gigabytes of memory,
+
+SPEAKER 1
+um. On 64 bit, right, like we can see that 16
+
+SPEAKER 2
+billion billion bytes, um, we're not quite there yet, I
+
+SPEAKER 1
+don't think, right, like as in like where this is
+
+SPEAKER 2
+a meaningful number, um, does anyone have a Peterbyte USB
+
+SPEAKER 1
+thumb drive or something like that?
+
+SPEAKER 2
+I, I wouldn't surprise me.
+
+SPEAKER 0
+I remember when my old supervisor came in with like, he's like, I have this USB and it's like I got a 1 terabyte on it. I was like, that's such a pointlessly large amount of
+
+SPEAKER 1
+memory. Um, but yeah, uh, it's, it's, it's very different from
+
+SPEAKER 2
+when I was growing up where you're like 779K on
+
+SPEAKER 0
+a disc and you're like, oh wow, my, my disc has 1.4 megabytes, oh yes, yes, this disc is enormous.
+
+SPEAKER 1
+Um, alright, so.
+
+SPEAKER 0
+Let's start with the stupid option, right? I'm running an operating system. I like, I will run one programme at a time because I'm lazy. And this is how like a lot of programme, you know, operating systems actually run for a long time and you're like, I'll just run one. If I have processors, I'll do one thing at a time. Um, like a human, humans only do one thing at a time.
+
+SPEAKER 2
+Um, the advantage is that it's very easy and it, um, yeah, the other, the problem with it is the process can destroy the OS right, because if you think
+
+SPEAKER 1
+about it like if you've only got one process at a time.
+
+SPEAKER 0
+And you don't even have the OS running and the OS doesn't do anything, so you've got to, you know, do a bunch of other stuff. Also it's like super inefficient, right, like I think we can, you know, say only one process the, the, what is the problem with only one processor at a time,
+
+SPEAKER 2
+the main disadvantage is it's only one process at a
+
+SPEAKER 0
+time. OK, um.
+
+SPEAKER 1
+Alright, so from the perspective of virtualization, it's actually pretty easy because you basically just go, you can, you what?
+
+SPEAKER 2
+What?
+
+SPEAKER 0
+Did I just copy the same slide? I feel like I did. You can basically just take the whole memory, right, for
+
+SPEAKER 2
+one process if you want, right?
+
+SPEAKER 0
+If you're only running one process, you basically, you may have all the memory, right, except for maybe a reserved area of the OS. So it's really, really easy.
+
+SPEAKER 1
+Um, so before we move on, right, so that's, that's where we're gonna start, that's like, Uh, you, you know,
+
+SPEAKER 0
+single programming, single programme at a time, right?
+
+SPEAKER 1
+Um, we're gonna end up with multi-programming, but before that we're gonna do a little bit of revision just to,
+
+SPEAKER 0
+I don't know, make sure that we're having a conversation
+
+SPEAKER 2
+where the words that I say have meaning, um.
+
+SPEAKER 1
+Who's seen this diagram before, please everyone, please, please everyone, most people have seen this diagram or something that looks like this diagram before. OK, so when you have a process, OK, who's heard the word stack and heat before?
+
+SPEAKER 0
+Come on, stack and heat. Alright, alright, we're good, alright.
+
+SPEAKER 2
+So when you have a process, there's basically 4 bits
+
+SPEAKER 1
+of the code, right, that matter. One is the actual code because we're gonna read the
+
+SPEAKER 2
+code like instructions and do stuff depending on what the
+
+SPEAKER 0
+numbers that are in this bit of memory. Um, we've got data which is the part of memory
+
+SPEAKER 2
+that you should never really use if you're a good programmer because it's like global variables and stuff and like
+
+SPEAKER 0
+global variables, who uses global variables? Bad programmers use global. Um, not always, like, there are uses for global variables, but, but in general data should be pretty small. And then you've got the stack, and then you've got
+
+SPEAKER 1
+the heap, right, and yeah. Now that's what we need, right, and for, for convenience, basically there is this glorious thing that if you design it so your stack goes backwards and your heap goes
+
+SPEAKER 0
+forwards, they can meet in the middle.
+
+SPEAKER 2
+And so you can sort of like let the programme
+
+SPEAKER 1
+use as much stack or heap as it wants, and then if they meet then it will crash, but you
+
+SPEAKER 2
+know that's the programmers' fault because the programme was too
+
+SPEAKER 0
+big.
+
+SPEAKER 1
+Um, and so there was this idea like, as a general structure is that is what the memory of a
+
+SPEAKER 0
+process looks like. So I'm gonna, you know, I'm gonna have my random
+
+SPEAKER 2
+heat variables and I'm they're going to like slowly grow
+
+SPEAKER 0
+over time, depending on, you know, if I have a memory leak or something like or I have a, if I'm in a good programming language like Java and I have automatic garbage detection, I don't have to think about
+
+SPEAKER 2
+those kinds of things, um.
+
+SPEAKER 1
+You know, and the stack can grow mostly from like
+
+SPEAKER 2
+recursive operations, so if you write lots of recursive, um, Uh, programmes which are good for solving certain kinds of problems but like, are actually a pretty bad way of programming in some ways, um, your stack is gonna grow,
+
+SPEAKER 1
+but generally speaking this is not a big problem, we
+
+SPEAKER 2
+can sort of, Abstract the whole process as this bit
+
+SPEAKER 1
+of memory, this is what it means.
+
+SPEAKER 0
+OK, cool, um.
+
+SPEAKER 1
+Any, any guesses what happens when you have threads? Can you, can you have three things that grow towards
+
+SPEAKER 2
+each other in one dimension, the answer is no, so
+
+SPEAKER 0
+we're gonna have to work out a different way of dealing with threads, which is kind of annoying, um.
+
+SPEAKER 1
+And just for revision, you know, like when we're talking
+
+SPEAKER 2
+stack, we have main function 1, F2, F3, so in main someone called a function called F1, inside F1 someone called a function called F2. Inside F2 someone called a function called F3, um.
+
+SPEAKER 1
+And You know, for the stack, if we, if we think about how the stack is organised, it's, it's useful to think about it for a moment. One of the things that's really cool about the stack
+
+SPEAKER 2
+is the stack only ever grows or shrinks, right?
+
+SPEAKER 1
+And so it's always contiguous with itself, that is to say, you always know where to put the next stack
+
+SPEAKER 0
+frame, the next bit of memory just goes on the top, and then the next bit of memory just goes on the top, and the next bit of memory just goes on the top, and when you're finished with it, you just delete that bit of memory and then release it back into the system and then you delete the next bit of memory and release it back into the system.
+
+SPEAKER 1
+So what's really cool about the stack is that it never has holes, right, and we're gonna talk a lot
+
+SPEAKER 2
+about how having holes in memory is really, really bad,
+
+SPEAKER 0
+um. So yeah, this is the example of the code that spawns this particular kind of sec.
+
+SPEAKER 2
+OK, then we have the heap, and the heap is
+
+SPEAKER 1
+like less good. The heap is kind of annoying, um, and the reason is is because not only in some languages do you
+
+SPEAKER 2
+have to go to the effort of like asking for
+
+SPEAKER 0
+memory explicitly and then asking to get rid of that
+
+SPEAKER 2
+memory explicitly, um, Which is good in some ways because
+
+SPEAKER 0
+it means that you can do things very fast but it's bad in other ways, which means you're gonna get um memory leaks and your programme will crash, um, which is generally bad, right?
+
+SPEAKER 1
+Um, the way that we declare things on the heat and the fact that we can free things means you can put a big thing on the heap and then
+
+SPEAKER 2
+a little thing and then you take the little thing
+
+SPEAKER 0
+out or you put in 3 things and you take
+
+SPEAKER 2
+the middle thing out, and you end up with all these holes, right? And so this is where we get this idea of
+
+SPEAKER 0
+fragmentation, the memory is broken into fragments. Has anyone ever defragmented a hard drive? Oh, you sweet summer children.
+
+SPEAKER 2
+Back in the day, I don't know, I don't know
+
+SPEAKER 1
+if it's actually a problem. I haven't defragged a hard drive for like, 15 years, right, so back in the day, what would happen because we had so little space, um, if you can imagine, all of the programme, all the stuff that you save
+
+SPEAKER 2
+onto your hard drive goes in blocks and then what
+
+SPEAKER 0
+would happen is that you delete something and then put something else in and you delete something and then you put something else in, and your hard drive would be.
+
+SPEAKER 1
+Not full, you have lots of little holes in it,
+
+SPEAKER 2
+right, so you're not using all the memory.
+
+SPEAKER 1
+Um, but you couldn't really do anything with it, and
+
+SPEAKER 2
+it was really, really slow, and the reason was, is because whenever you tried to create a new file, it would be like, where do I put the new file? There's all of these tiny holes. Oh no, not that tiny hole, not that tiny hole, not that tiny hole, not that tiny hole, not that, ooh, just big enough, and then it would put in
+
+SPEAKER 0
+your little bit of memory.
+
+SPEAKER 2
+And so the process of defragmentation, which took like hours, is your computer would be like, OK, what if I
+
+SPEAKER 0
+move everything together into like little bundles, so everything's like right next to itself, um, and then I'll create one giant gap. But that takes a really, really, really long time.
+
+SPEAKER 2
+Um, but I'm surprised no one's ever actually done it here, but in a way I'm not surprised, memory's way
+
+SPEAKER 0
+too big nowadays. This is not a problem that is as important as it used to be.
+
+SPEAKER 2
+Um, but for processors it will be because, um, with
+
+SPEAKER 0
+processors you're working with RAM which is a lot smaller than, um, your disc.
+
+SPEAKER 1
+Alright, um, yeah, this, I don't know, just as revision, you know, if you're programming and see you do free.
+
+SPEAKER 2
+And if you're in C++, you do delete, yeah. All revision, cool.
+
+SPEAKER 1
+Um, the advantage of the heap, the reason that we have a heap, of course, is that you can use
+
+SPEAKER 0
+it to create bespoke data structures of any size, however
+
+SPEAKER 2
+you want.
+
+SPEAKER 1
+Um, it is a bit slower and it does end
+
+SPEAKER 2
+up with fragmentation, but pretty much most programmes, modern programmes
+
+SPEAKER 0
+use the heap a lot because it is the easiest way to create interesting data structures, uh, you know, like graphs and trees and stuff like that.
+
+SPEAKER 1
+Um. Oh yeah, this is my fun. I, I was like, I was gonna use AI and I'm like, hey AI, I want to have a visual
+
+SPEAKER 2
+representation of the difference between the stack and the heap,
+
+SPEAKER 1
+right, so the heap is on the left, right, cos
+
+SPEAKER 2
+it's a heap of boxes, right?
+
+SPEAKER 0
+It's unordered and disorganised, and the stack is on the
+
+SPEAKER 1
+right and it's all ordered and structured.
+
+SPEAKER 2
+And every box in the stack is labelled heap.
+
+SPEAKER 1
+Right, and so I just had to keep this cos I was just like AI's not quite there yet, like I didn't even ask for labels, it was like, no,
+
+SPEAKER 2
+I'll I'll just, I'll just troll you and label all the boxes on the stack heap. Alright, um.
+
+SPEAKER 1
+So the summary is one is ordered, one is chaotic,
+
+SPEAKER 0
+um. Yeah, yeah, I don't know.
+
+SPEAKER 1
+Um, OK, then we have data, so data is basically, if you can imagine there's main, everything before main, if
+
+SPEAKER 2
+you declare something before main that goes in data, right,
+
+SPEAKER 0
+that that's basically it. Main itself is actually in the stack, but everything that you declare globally is in data, so just in case you didn't know about data, and then. I don't know. He, the, the X is in data because into X
+
+SPEAKER 2
+is a global, the Y is in stack.
+
+SPEAKER 1
+Any guesses where Z is? Yes.
+
+SPEAKER 0
+Yes, Z is in the stack because it's a pointer, and then it, at the moment actually I think it's,
+
+SPEAKER 1
+well, I think it initially points at Y and then it points at the heap somewhere, yeah, so entirely correct.
+
+SPEAKER 0
+OK, cool, alright, so revision done.
+
+SPEAKER 1
+Any questions about the revision?
+
+SPEAKER 0
+Good, cause I was gonna tell you go back to computer systems or systems programming or some other course or like to be honest, ROP maybe, I don't know, um
+
+SPEAKER 2
+or uh what's the postgrad foundations, foundations, the equivalent, um,
+
+SPEAKER 1
+OK. We'd had this diagram before, but last time it said one at a time, this time it says many at a time. Alright, so how are we gonna do it? Right, why are we doing it cos it's cool, disadvantage
+
+SPEAKER 0
+is how, like it's obviously kind of complicated, collisions, right, like, um, missing data is a good one.
+
+SPEAKER 1
+OK, so what is problem number one, problem number one,
+
+SPEAKER 2
+problem number one.
+
+SPEAKER 1
+Problem number one is actually a bit more subtle than you would expect, right? So you know, most people will be like, oh, what's the biggest problem? Oh, the code is going to crash with itself, right? No, the biggest problem, the first problem that you encounter when you're writing a process is the process you're like, it's gonna go somewhere arbitrarily in memory, right? Like, how does it know where to go, right? Like, like that's like a really basic kind of question,
+
+SPEAKER 0
+like if I'm a process, Like, and I'm like, I'm
+
+SPEAKER 2
+meant to be writing to, let's say, I don't know, address 1000.
+
+SPEAKER 1
+How do I know that, right, how do I know
+
+SPEAKER 0
+that I should be written to address 1000? Do I write that in myself?
+
+SPEAKER 2
+Am I actually writing where in memory I'm supposed to
+
+SPEAKER 0
+go? That sounds really undesirable because it means like like when
+
+SPEAKER 2
+you get to a new computer or someone else is already using that address, you're like, well I can't run
+
+SPEAKER 0
+today because I only operate in this house, right? I don't do anything in any other house other than
+
+SPEAKER 2
+this one, So we need to have a way that
+
+SPEAKER 1
+we can do what's called a address translation, where we're
+
+SPEAKER 2
+like the process itself thinks it's going somewhere, but in reality it's going somewhere else.
+
+SPEAKER 1
+Um, And the takeaway here is processors shouldn't know that
+
+SPEAKER 2
+it's sharing memory, right? Like as in that there, if you tell a process where it's gonna go and it at any point knows where it's going, then a malicious process will be like,
+
+SPEAKER 0
+hey, I know where I'm going, I know where I should go. I'm going to try to go somewhere else, right?
+
+SPEAKER 1
+Um, but also, you know, like it means that your
+
+SPEAKER 2
+code is really hard to understand because if your code
+
+SPEAKER 0
+needs to itself understand where it's gonna go. Then every bit of code has to understand where it has to go, right, and that feels like a really annoying thing to have to programme into your own programme, right? You, you'd prefer to just go like I want an integer and another integer and I want to add them
+
+SPEAKER 2
+together, right? That's what you wanna, you know, that's the headspace of
+
+SPEAKER 0
+a programmer, it's not like I want an integer, but
+
+SPEAKER 2
+I want it to be an address 9000 and I have another integer and it's an address 20,000.
+
+SPEAKER 0
+You don't want to be there. Alright, like, of course.
+
+SPEAKER 1
+This was the point for me where I was like, I don't understand the term here, right, like cause this is like the, the key term, you know, like the thing where like, what is the definition of transparency, and I'm like, transparency, when a process doesn't know. Where it is.
+
+SPEAKER 2
+Like, has anyone ever heard the word transparency used in
+
+SPEAKER 1
+that kind of context of not knowing something? Usually when I hear the word transparent, I'm like, so the the the process knows exactly what's going on.
+
+SPEAKER 2
+No, no, no, this should be called opacity, right? Like as in or you know, abstraction or some other word. It's called transparency, but it it really means the opposite of transparency, right? Like the, the, the process has no idea what's going
+
+SPEAKER 0
+on. Ergo, something is not transparent.
+
+SPEAKER 2
+I just, I was like, I, I.
+
+SPEAKER 0
+Yeah, it broke my brain, OK, so.
+
+SPEAKER 1
+The programme at all times will think that it's writing to a really boring address like 0, right?
+
+SPEAKER 0
+That's how it's gonna think. It's gonna be like, I'm gonna, you know, I'll write to 0 and then I'll write to 1 and then I'll write to 2 and then I'll write to 3,
+
+SPEAKER 2
+right? But what's actually going on is you can see here that there's two addresses here, the processor's address, which is
+
+SPEAKER 0
+like 0, all of them like process 123 and 4, all think they're at 0, but actually they're at 215, 8, 196, 225 or whatever, right? It doesn't matter.
+
+SPEAKER 2
+Um, OK, so we're gonna do this like address translation
+
+SPEAKER 0
+thing. Problem number 2.
+
+SPEAKER 1
+What's problem number 2.
+
+SPEAKER 2
+Oh yeah, problem number 2.
+
+SPEAKER 0
+Did you see it? Did you see evil process, evil process, OK.
+
+SPEAKER 1
+We need to make sure that each process is limited
+
+SPEAKER 2
+to its own bit of memory, right, so that's, that's
+
+SPEAKER 0
+obvious like that's obviously a big problem, right, like as in if I write a programme and it's like I
+
+SPEAKER 2
+will use your memory, all the programmes break, right, and
+
+SPEAKER 0
+it's like the whole concept of viruses basically, um.
+
+SPEAKER 1
+This one's a little bit subtler, right, like cause I've got two of them, you know, protection and privacy, protection
+
+SPEAKER 0
+and privacy, protection and privacy.
+
+SPEAKER 2
+It's a bit conceptual here, right?
+
+SPEAKER 1
+It's like, OK, so what is the difference, the direction of the arrow. So one of them is that like there is an incentive to prevent a process going outside of its memory, but there's also an issue of, I don't want people to read. My memory, right? So those are two different kinds of ideas.
+
+SPEAKER 2
+Like if someone writes memory into my programme and breaks
+
+SPEAKER 0
+me, that's bad, but it's also bad if someone can
+
+SPEAKER 2
+just read what's in my memory, right?
+
+SPEAKER 1
+Um, and you'll find that this, this happens a bit,
+
+SPEAKER 2
+you know, like it's another kind of hack that you
+
+SPEAKER 0
+would have in an operating system where like maybe um.
+
+SPEAKER 1
+You know that a process used a bit of memory
+
+SPEAKER 2
+and then it stops running and so you go and
+
+SPEAKER 0
+grab that bit of memory and then you start reading it and you'd be like, oh, I can sort of interpret their data in some kind of way, right, cause they they wrote it into RAM at some point and the RAM contained like a a shadow of the data. Um, so privacy is another issue.
+
+SPEAKER 1
+Uh, problem number 4. Any guesses what problem number 4 is?
+
+SPEAKER 2
+Did you see the, did you see the visualisation?
+
+SPEAKER 0
+Yes.
+
+SPEAKER 2
+Yes, fragmentation, look, it's fragmented, wow, I didn't even have
+
+SPEAKER 0
+to. Don't waste memory, right?
+
+SPEAKER 2
+Fragmentation, basically, um, all right.
+
+SPEAKER 0
+That's a good question. What's problem number 5? I don't even know what problem number 52 arrows. Sharing, it's not really a problem, it's it's more like
+
+SPEAKER 2
+a thing where you're like, oh OK.
+
+SPEAKER 1
+Could I share data this way? Could I, could I have two processors that share the same memory space?
+
+SPEAKER 2
+Maybe I want to do that on purpose because I'm
+
+SPEAKER 0
+a good programmer and I'm interacting with another good programmer that I like, and we're writing two programmes and they can see the same bit of memory. Um, so it's another kind of way that if you're
+
+SPEAKER 2
+gonna build a memory system, you probably want to have
+
+SPEAKER 0
+voluntary sharing. You don't wanna, you know, have sharing available by default, but you should be allow a user to work out how they want to share their processes. All right. I'll deprogramming, OK.
+
+SPEAKER 2
+I'm sharing, bad solution number one, OK.
+
+SPEAKER 0
+This is a really bad solution.
+
+SPEAKER 2
+What are we gonna do?
+
+SPEAKER 1
+OK, so what we're gonna do is we're gonna go, hey, what if I just gave everyone all the memory for a little bit, and then, I deleted them, and
+
+SPEAKER 0
+then I stored that in like the hard drive or something, and then I got the second process and I was like you can have the memory for a little bit, right, so it's like time sharing, right?
+
+SPEAKER 1
+Um, no one really wants to live in a house for 1 hour every day, right? Um, it feels very, very inefficient, but the main reason that this doesn't work is because basically what we're gonna
+
+SPEAKER 2
+be doing is like, Taking things from one kind of
+
+SPEAKER 1
+memory and then throwing them in and then taking it
+
+SPEAKER 2
+from another kind of memory and then throwing them out
+
+SPEAKER 0
+and then, Basically this is the, I don't know, this is my visualisation, so basically to describe it, fast memory
+
+SPEAKER 2
+represents the CPU, so what we're gonna do is take stuff from slow memory, put it into the CPU, do
+
+SPEAKER 0
+some processing on it, and then put it back into
+
+SPEAKER 2
+a slow memory and then take it another thing into fast memory, and then, you know, do some stuff on
+
+SPEAKER 0
+it and then swap that out again, right? Like this is gonna be really efficient.
+
+SPEAKER 2
+anyone think this is a good solution?
+
+SPEAKER 0
+I, I don't think this is a good solution.
+
+SPEAKER 2
+The amount of time it takes to do the copies
+
+SPEAKER 1
+is gonna be large, so it's gonna be bad.
+
+SPEAKER 0
+Um, why is this bad? Yeah, alright.
+
+SPEAKER 2
+Um, Base sharing.
+
+SPEAKER 0
+OK, so this is like the opposite, right?
+
+SPEAKER 2
+And so the idea is that we have like process
+
+SPEAKER 0
+one can go at the top, process two can go in its spot, and process 3 goes in its spot, right? Like this is what all my pictures so far have
+
+SPEAKER 2
+kind of assumed exists, right, space sharing.
+
+SPEAKER 1
+Each individual process has a bit of memory.
+
+SPEAKER 0
+That's all on its own, right?
+
+SPEAKER 1
+Um, So we can see here in, you know, with some assembly we're gonna be, you know, referencing some different
+
+SPEAKER 2
+bits of memory, right?
+
+SPEAKER 1
+We need to be able to, like the main main thrust here is that we, we have to be able to take the addresses that the programme thinks it's written
+
+SPEAKER 2
+and convert them into actual addresses efficiently, right?
+
+SPEAKER 0
+Like, so what is the most efficient way of doing
+
+SPEAKER 2
+that, right?
+
+SPEAKER 1
+Um. And there's a few, right, so this is an early
+
+SPEAKER 2
+solution which is called static relocation, right?
+
+SPEAKER 1
+Someone had the idea, why don't we just rewrite all
+
+SPEAKER 2
+the memory addresses, right? So the idea here is you're like, OK, so I
+
+SPEAKER 1
+have a programme that's full of like assembly code, right, and I'm just gonna add 2 to the first hex
+
+SPEAKER 0
+number, right, and that will put you in this slot
+
+SPEAKER 2
+of memory, or I'm gonna add 3 for a different process, right?
+
+SPEAKER 1
+Um, so basically wherever you see a 0, you just
+
+SPEAKER 2
+convert it to a 3, and wherever you see a 0, you just convert it to a 5, and this
+
+SPEAKER 1
+will put this in different parts of memory, right? Any guesses? Why could this be bad, yes. Yeah, yeah, no, that could be bad, right? Yes, if two process OK, let me think.
+
+SPEAKER 0
+What if two processors want that same bit of memory?
+
+SPEAKER 2
+Yeah, no, that, that, that, that could be bad, right?
+
+SPEAKER 1
+Um. The other way that it could be any other guesses
+
+SPEAKER 2
+for like why it could be bad.
+
+SPEAKER 0
+Yes.
+
+SPEAKER 2
+Yeah, no, exactly, like.
+
+SPEAKER 1
+I think that the first of your points is probably
+
+SPEAKER 2
+the more like. Game breaking one which is, what if someone doesn't know
+
+SPEAKER 1
+how to programme properly and like does some pointer arithmetic
+
+SPEAKER 0
+that's slightly wrong, right, and then you offset that into
+
+SPEAKER 2
+someone else's code, right, like, what's to stop me going,
+
+SPEAKER 1
+I am the guy who's gotten 3. And I'm going to put 2 at the start of
+
+SPEAKER 0
+mine, and it's gonna replace the 2 and add, Another 3 to it to get me to 5 so I can overwrite process number 2, right, like, and I'm not
+
+SPEAKER 1
+saying that I'm doing this on purpose, I'm just saying that like, obviously that's gonna happen, right?
+
+SPEAKER 2
+Like this is, this is the kind of solution where like like it's clearly a hack, right, um, and it,
+
+SPEAKER 1
+yeah, they didn't do, uh, it was brief, I imagine, um. OK, so the way that we're actually gonna do it is using this memory management unit, right, so if you ever see MMU, the MM's job is basically to go,
+
+SPEAKER 2
+you want some memory, I shall find it for you, that's all it does, right?
+
+SPEAKER 1
+Um, so if you can see it like the process is just, you have the CPU on the left, right, and we're in CPU land we're sort of in logical addresses. So we're thinking about the instructions from the code.
+
+SPEAKER 2
+The code is gonna be written with, you know, address
+
+SPEAKER 0
+number 0123456.
+
+SPEAKER 1
+We're gonna pass that to the memory management unit. The memory management unit's gonna convert it.
+
+SPEAKER 2
+To the physical address of the memory in RAM and
+
+SPEAKER 1
+then you can look it up in RAM and then
+
+SPEAKER 0
+you grab the appropriate bit of bit of memory, right? And so that's what we're gonna do.
+
+SPEAKER 2
+We're gonna do what's called dynamic relocation and so we're
+
+SPEAKER 1
+gonna do this on a one for one basis. Every time you want an address, I will tell you
+
+SPEAKER 2
+what that actual address is. All right.
+
+SPEAKER 0
+I can't even remember the point of this slide, two operating modes privileged. When enter OS, trap systems calls, interrupts, etc. allow certain instructions, all uh, oh, OK, yeah, sorry, um,
+
+SPEAKER 1
+this is basically just to demonstrate the fact that like
+
+SPEAKER 2
+if you can imagine.
+
+SPEAKER 1
+That this, there is a dichotomy, right? Obviously the OS has access to the whole machine, right,
+
+SPEAKER 2
+so once you're in kernel mode, you have access to all of the RAM, right?
+
+SPEAKER 0
+Otherwise, like it's a pretty crappy OS right?
+
+SPEAKER 2
+um, but when you are in user, user mode, anything
+
+SPEAKER 1
+that's running in user mode obviously is going to be
+
+SPEAKER 2
+curtailed to the process that that user is allowed to
+
+SPEAKER 0
+have, right, so if you've got a, A bit of memory that you've been allocated while you're in user mode
+
+SPEAKER 2
+that applies, as soon as you go to kernel mode,
+
+SPEAKER 1
+all of these rules stop applying. In kernel mode, the kernel can do whatever it wants,
+
+SPEAKER 2
+hence, like for our example from lecture one about system
+
+SPEAKER 0
+library calls, um, you elevate to kernel mode, you can look at any bit of memory that you want, you can find all the magical system library calls and do all the hardware, um, limited direct access with the hardware, um, but yeah, I think that was the point of
+
+SPEAKER 2
+this one. OK.
+
+SPEAKER 1
+So the solution, the solution to this problem, right, is, um, well, not the solution, the starting solution, right, so we, we're not just going to add an arbitrary number
+
+SPEAKER 0
+to all of the memory addresses.
+
+SPEAKER 2
+And we'll see why in a bit. What we're gonna do is we're gonna say for every
+
+SPEAKER 1
+process, I will give you a register called the base
+
+SPEAKER 0
+register and inside the base register is going to be the offset from your memory instructions to convert you into the memory the memory addresses in physical memory, right? So it's a pretty simple idea, right, I'm just like you, your offset is 21, you, your offset is 91,
+
+SPEAKER 2
+your offset is 36, right?
+
+SPEAKER 1
+Um, and so I can just say this is where
+
+SPEAKER 2
+you end up, right, so, you know, if you give me the address 0, I'll add 21 to it, so
+
+SPEAKER 0
+the real address is 21, um.
+
+SPEAKER 2
+So it's not very complicated, right, like it seems like
+
+SPEAKER 0
+a fairly reasonable solution, um, it does have a problem,
+
+SPEAKER 2
+um, but you can have it, you know, like, um, you can design some hardware around it to do it really, really efficiently, right, so it's basically I've got a
+
+SPEAKER 0
+little bit of hardware, all it does is it literally
+
+SPEAKER 2
+just does this addition.
+
+SPEAKER 0
+I'm not like loading it into the CPU and doing the addition or anything like that. I've got a little bit of hardware that just goes, I give you a number, add these two numbers together, give me the output. I can do it really, really quickly.
+
+SPEAKER 1
+All right. Um, It does mean that we need to have a base register so that like for every process it's gonna
+
+SPEAKER 2
+have to have like, it's gonna have to know what it's base is, but that's fine.
+
+SPEAKER 1
+um each process is a unique base. And yeah, when we hear the word translate here, all
+
+SPEAKER 2
+that means is add an offset.
+
+SPEAKER 0
+Now, that's going to sort of apply for pretty much
+
+SPEAKER 1
+every technology that we have.
+
+SPEAKER 2
+It's really just like find an address or find an
+
+SPEAKER 0
+offset, essentially, but that's what, when we say address translation, that's what we really mean. Like address translation to me always sounded like you were trying to convert it from binary into some other kind of like, more complicated language, but it's not really. It's just you're just doing a one for one mapping, you know. Where does this go? It goes from here to there.
+
+SPEAKER 1
+Um, Ah yes.
+
+SPEAKER 2
+The malicious programme, right? OK, so the base is insufficient, right, and I think
+
+SPEAKER 1
+we can understand why, um, Admittedly, One of the things you could protect from um arbitrarily is that you can't go backwards, right, so you could say, well, I'm not
+
+SPEAKER 2
+gonna let you give me a negative address, that's retarded,
+
+SPEAKER 0
+right, like as in I, I'm not gonna go backwards, don't give me minus 500, right, literally retarded, that is to say to go backwards, um.
+
+SPEAKER 1
+Right, um, what I'm going to do instead, right, um, if I'm a malicious programmer like I'm gonna go fishing into the future, right, so I'll just be like, I
+
+SPEAKER 2
+would like, you know, as it says, register 1 billion, right, um, and just add my offset to that 1
+
+SPEAKER 0
+billion, I can have whatever I want that happens to
+
+SPEAKER 2
+be there, right? So you can obviously see how process one could completely
+
+SPEAKER 1
+mess up process two, right? Um, and so the solution to that is like pretty
+
+SPEAKER 2
+obvious, you're like, OK, you've got a start point and an end point. Easy, done, right? So it's what's called base end bounds, right? So you have the base, this is where the memory
+
+SPEAKER 1
+starts, you have bounds, that's where the memory ends. No, the bounds is the base plus the bounds is
+
+SPEAKER 0
+where the memory ends. The bounds is usually actually a like a hard coded number, right, where it's like you can have 32,000 addresses or something, um.
+
+SPEAKER 1
+So yeah, pretty simple idea, right, I'd be like your memory is there.
+
+SPEAKER 2
+Um, I can tell you where it starts, where it
+
+SPEAKER 1
+ends, and I can do, where is it?
+
+SPEAKER 2
+The size and then you can be sad, right, um,
+
+SPEAKER 1
+and then I can do it in hardware, right, so
+
+SPEAKER 0
+I can basically go, OK, in hardware, if you try
+
+SPEAKER 1
+and get beyond the bounds by asking for registered 1
+
+SPEAKER 0
+billion, I will say no and then kill your programme because you're an evil programme, also known as the seg
+
+SPEAKER 2
+fault, um, and we'll get to why it's called a
+
+SPEAKER 0
+eg fault in a little bit, um, and we are
+
+SPEAKER 2
+safe, everything's good.
+
+SPEAKER 1
+OK, basic and bounds, cool. How are we gonna do it? We have the 2 new registers, we can change to privilege mode, we save the base and the bounds, we load the base and the bounds, and we change back
+
+SPEAKER 2
+to user mode. That's what happens on a context switch.
+
+SPEAKER 1
+So basically, to do the context switch, the OS has
+
+SPEAKER 2
+to do a little bit of work. It's basically interchanging the base and bounds for the process in addition to all the other stuff that it's interchanging
+
+SPEAKER 0
+to do the process.
+
+SPEAKER 2
+Um, and so some thoughts, can a user change its
+
+SPEAKER 1
+own basin bounds, who thinks yes?
+
+SPEAKER 0
+Who thinks no? Everyone thinks no. Yeah, um, can you say activate privilege? No, like what kind of, and what about threads?
+
+SPEAKER 2
+So how do we think threads are gonna work?
+
+SPEAKER 0
+Oh, it's a bit, we'll get to that in a bit, right, um, we'll find that, you know, it doesn't
+
+SPEAKER 2
+actually change that much, threads threads basically don't change the
+
+SPEAKER 0
+bases and bounds under a base and bounds thing when um, not meaningfully, um.
+
+SPEAKER 1
+So we've got protection and privacy, we've got dynamic relocation, we've got fast implementation via our hardware, and we have
+
+SPEAKER 2
+two small registers and we're like, yes, it's really good,
+
+SPEAKER 1
+except we have all the empty space in our hard
+
+SPEAKER 0
+drive is now completely fragmented and horrible. OK, right.
+
+SPEAKER 2
+Right.
+
+SPEAKER 1
+Uh, we have two kinds of fragmentation here, right? Um, one is the light blue, right? So that's what's called external fragmentation.
+
+SPEAKER 2
+So the idea is that you have two processors and in between the two processes or the memory for the
+
+SPEAKER 0
+two processes, there is a gap.
+
+SPEAKER 2
+So that is an external fragment.
+
+SPEAKER 1
+We also have the problem that like, The process itself has a huge gap in it, so if you've made a, you know, like if you make Hello world, right, the, the, The operating system is going to give you about as much memory as if you wrote a really
+
+SPEAKER 0
+dumb, like a much more complicated programme, right, and there's just gonna be a huge gap in the middle, right, representing what's called internal fragmentation, that is to say, your
+
+SPEAKER 2
+processes might just waste space because they don't use all
+
+SPEAKER 0
+the memory that they've asked for.
+
+SPEAKER 2
+Um, All right. Have you guys done C strings? I'm assuming you have, right? They end in this null character.
+
+SPEAKER 1
+Yeah. So, this is a bit of an aside, but basically one of the things that we could do, right, as
+
+SPEAKER 0
+a, a way to just be, you know, as I said, Doctor Evil again, um, Is we could just.
+
+SPEAKER 1
+You know, like with a C string, you know, get
+
+SPEAKER 2
+rid of the null character and then just start reading characters. Yeah.
+
+SPEAKER 1
+One of the things that we could do if we
+
+SPEAKER 2
+wanted to start trying to like poke holes in this
+
+SPEAKER 0
+memory protection kind of thing, right, cause like a C
+
+SPEAKER 2
+string, um, Uh, how would you put it, it's just
+
+SPEAKER 0
+gonna like the, the, the function for the C string
+
+SPEAKER 2
+is actually a low level written thing by someone else,
+
+SPEAKER 0
+right? They wrote what a C string is, right?
+
+SPEAKER 2
+And you're just gonna follow the characters along until you get to to a null character and you're like, well,
+
+SPEAKER 0
+I'm an evil programmer, maybe I will, you know, get something on the heap, and then, and then, or on the stack and then I'll try and run, run past,
+
+SPEAKER 1
+right, um. And this allows the concept of buffer overflow attacks, right,
+
+SPEAKER 0
+where you, um, you can see here that basically there's
+
+SPEAKER 2
+an array with 5 things in it and you're like, can I have up to 255 please, right, even though
+
+SPEAKER 1
+it only contains 5, I have a picture of this. Yeah, and, and so you can do a whole bunch of things where you sort of fiddle with the the
+
+SPEAKER 0
+stack in this kind of way where you're trying to, you know, like um put things onto the stack and then sort of keep going past where you're allowed to be. Um, And it's called stack smashing. I know. Um, another example is like, like people used to put in really, really long strings, right, so this is an old old school kind of attack, where basically what happens is you, you can see here that the character buffer
+
+SPEAKER 2
+one only takes 4 and the character buffer 2 only takes 12, but we're gonna try and put 900 characters into buffer 2, and then what you can do is you can start um writing into other people's stacks, and
+
+SPEAKER 1
+then if you're really clever, what you can do is
+
+SPEAKER 2
+you can write the right string that makes it look
+
+SPEAKER 0
+like an instruction so that when someone else reads that stack, Right, that executes an instruction and if you can get that into the OS, so the OS is reading an instruction because you've like messed with something because you overwrote a buffer, um, then you can get the OS to do all kinds of things, right, and then you can be an evil, evil evil evil person. This is not a cybersecurity course, so, um.
+
+SPEAKER 1
+Yeah, and so you can see here basically the idea
+
+SPEAKER 2
+is we have the stack pointer and the frame pointer
+
+SPEAKER 0
+and what we're gonna do is we're going to, you know, write our, this is a very long string to
+
+SPEAKER 2
+try and like break into other parts of the um
+
+SPEAKER 0
+the system.
+
+SPEAKER 1
+Um, and, but nowadays if you write it properly, you're
+
+SPEAKER 0
+gonna get a seg volt, right, like that, like if your operating system operates correctly, you will get a seg volt, basically.
+
+SPEAKER 2
+You will try and write into a bit of memory that the bases and bound registers will tell the operating
+
+SPEAKER 0
+system that you are Doctor Evil and should, you know, kill your programme.
+
+SPEAKER 2
+All right. Um. Yeah, so here's the idea is that that you try and, you know, like you insert something that looks like an address here, and so when it's doing return to address, it returns somewhere crazy, um, as the sort of
+
+SPEAKER 0
+like, I don't know, approach to try and break this. Alright, alright, how are we doing for time? Yeah, 148.
+
+SPEAKER 2
+OK, cool.
+
+SPEAKER 1
+Segmentation. Who has heard the term segmentation fault? Everyone has heard that. Who here has not ever programmed a segmentation fault? Have you never programmed in C or C++ liars, everyone's done a seg fault, um. What is the key characteristic of segmentation fault? Right, yes. It's not at all helpful, right? Every other bug that you get, right, and you know when you break something in a compiler, yeah, um, it gives you a message and the message is meaningful. When you go to seg fault, the message is always meaningless, right, and we're going to discover sort of why
+
+SPEAKER 2
+the, the word segmentation fault actually came into being, um, through the concept of segmentation, right?
+
+SPEAKER 1
+So, here's the idea. One of the problems with the previous approach. Is that we're going to have this gigantic segment of code, right, so it's gonna have the code, the data, the heap, and the stack, all set uh all together in one big block to represent a process, and that's really big and, and so one of the solutions was like, well why don't we make them small, why don't we break them up into smaller bits? If we have smaller bits we can, you know, fit them into smaller holes, right, and if we fit them into smaller holes we'll have less holes basically because it'll
+
+SPEAKER 0
+be filled with small things. Um, we'll actually have more holes because. It's just how it works, you know, you build holes, you make more holes, but I holes aren't things, um,
+
+SPEAKER 1
+anyway, um. So, it has 34 segments here. In general it's actually only 3, so the 3 segments are usually code, stack, and heap is usually combined with
+
+SPEAKER 0
+data.
+
+SPEAKER 2
+Um.
+
+SPEAKER 1
+So, If we want to do this, one of the
+
+SPEAKER 2
+ways that we could do it is that we go, OK, so I've got all these bits, and what I'm gonna do is I'm gonna use the first two bits
+
+SPEAKER 1
+to represent which segment you are of the process, right,
+
+SPEAKER 2
+so for every process there are 3 segments. There is the code segment, the heap segment, and the stack segment, and data is in the heap segment. And so that tells you where a memory it's gonna
+
+SPEAKER 0
+be, right, like as in I can be like, oh it's actually the code one, or the heap one or the stack one, and then I'm gonna use an offset, right, basically to say, you know, whereabouts, you know, some other part of memory, essentially, um.
+
+SPEAKER 2
+And so that was the idea, right, so what we can do is we can say, you know, like if I have basin bounds of A for the stack, right, I can put it at A to A plus B, if I have basin bounds of X and Y, I can put it from X to X plus Y.
+
+SPEAKER 0
+and if I have basin bounds of M and N I can put the code from M to N, and I think I have an animation here that actually puts data with the heat to make it look correct.
+
+SPEAKER 1
+Um, yeah, so that's the idea, it's a cool idea,
+
+SPEAKER 2
+right, like it totally makes sense.
+
+SPEAKER 1
+Um, it solves none of our problems, but like it, it looks kind of like a solution.
+
+SPEAKER 0
+I'm sure there was someone who got, it was like, I, I have this non-solution to our problem, and everyone
+
+SPEAKER 2
+was like, well done, well done with your non-solution.
+
+SPEAKER 1
+Um, we'll we'll find out why. Um, one of the things that's kind of fun is
+
+SPEAKER 2
+that, um, There's this up versus down thing, so.
+
+SPEAKER 1
+I don't, I do know why, like it's a, it's
+
+SPEAKER 2
+a, it's sort of like a mistake of history, um, because we had this original idea that stacks go down,
+
+SPEAKER 0
+like it's.
+
+SPEAKER 1
+When I say the stack goes down, do people understand what I'm saying here, right?
+
+SPEAKER 2
+Like as in like, clearly the arrow is pointing up, but up is lower numbers.
+
+SPEAKER 1
+So, so in Number land it goes down, in drawing
+
+SPEAKER 2
+land it goes up, and we always draw it from
+
+SPEAKER 1
+the top to the bottom because I hate computer scientists
+
+SPEAKER 0
+because they do stuff like this.
+
+SPEAKER 2
+Every textbook will. like this, but um, yeah, the stack grows backwards, which
+
+SPEAKER 0
+is upwards, and the heat grows forwards, which is downwards,
+
+SPEAKER 2
+and the code also grows downwards, right?
+
+SPEAKER 1
+And so you can see here that there's a little bit of a trick here which is where they have
+
+SPEAKER 2
+the 01 and the 00, they both grow forwards. And the 10 grows backwards, right?
+
+SPEAKER 0
+And so what people did is they were like, oh, OK, well when you get a stack reference we're gonna count it backwards, so we're gonna invert it, right? And I can tell that from this first bit, right, um, cause the first bit is the backwards ones, um, all the forwards ones. Um, but yeah, so this is how we can break
+
+SPEAKER 2
+it up, right, and then we got, you know, the,
+
+SPEAKER 0
+the rest of our memory where are we gonna put
+
+SPEAKER 2
+it, um.
+
+SPEAKER 1
+So as an example here we have like code, we
+
+SPEAKER 2
+go from 0 to 3 and we go from 2
+
+SPEAKER 0
+to 3, well they're all the same size basically, the same bounds, um, but we've got different bases for each of them.
+
+SPEAKER 2
+And what we can do is we can look at
+
+SPEAKER 1
+the first two bits and we'd be like, oh it's the data segment, and it's gonna go in this location, right, I can work out what the actual offset is
+
+SPEAKER 2
+going to be by calculating its its base, which in
+
+SPEAKER 0
+this case is 10 because that's a 2, right, 10
+
+SPEAKER 2
+is 2 in binary, right, so this is like 2002 essentially in hex, right, and then I can be like, oh that's cool, um, and I can pop it into memory, and I'd be like that's where it will go
+
+SPEAKER 0
+in memory. Yeah, so I basically go the, First thing gives me
+
+SPEAKER 1
+the segment of which there are possibly 3. I then do the offset and then I calculate the offset and I replace um the rest of the uh
+
+SPEAKER 2
+string of its with the offset here. So I've replaced that with 2000 essentially, right, cause it's
+
+SPEAKER 0
+0 X 2000, and then I chuck it into memory,
+
+SPEAKER 2
+right, and just to. Demonstrate the idea if it was 2400, if the base
+
+SPEAKER 0
+was 2400, I'd be adding 2400, right? That's the difference. That's 2000, that's 2400 in binary. OK, uh, in hex, not in, in decimal.
+
+SPEAKER 2
+Um, and similar thing here, like if I have move
+
+SPEAKER 1
+8000, that's 10, which implies it's the stack, um, and
+
+SPEAKER 0
+then I can do the other offset for the stack, although technically I think I should have done that with the subtraction.
+
+SPEAKER 2
+I feel like I will, I will double check and
+
+SPEAKER 0
+see if I should have done that with the subtraction. In general, like that's how it should work.
+
+SPEAKER 2
+I think I copied it from an example that had
+
+SPEAKER 0
+code and I decided I'll make it the stack without making it subtraction. I'll, I'll issue a correction for that if one is necessary, um.
+
+SPEAKER 1
+So we get back to this thing where we're like, why did we do segmentation in the first place, right? And and kind of we were trying to say that like we don't want to have these huge blocks of programmes. Um, and there are some advantages to it, like, like one advantage is for some programme you could define it to have quite a small heap, right? And then when it gets more heat, you can be
+
+SPEAKER 2
+like, uh, it needs more heap boss, and then the
+
+SPEAKER 0
+OS could be like, OK, you can have more heat, there's nothing there, you can expand into this territory. And similarly with the stack, you could expand the stack as it needs stack, um, because they're not pointing at each other anymore.
+
+SPEAKER 1
+Um, but really like, like the main thing that segmentation does is nothing. It does, it does nothing useful, right? Because it does break things up a little bit, but it doesn't solve the big problem which is this external fragmentation, right? Um. And so, you know, like, what, what are you gonna do now? You like you move your segments around, right, like you, that was the thing you're trying to avoid in the first place.
+
+SPEAKER 2
+I've got hundreds of holes, I'm gonna have to defragment
+
+SPEAKER 0
+my hard drive anyway, well, I'm gonna have to defragment my RAM on the fly, um.
+
+SPEAKER 2
+But this is where we get the word segmentation fault,
+
+SPEAKER 0
+right, because this was how people did things for a while and that's when the term segmentation fault came into being, and a segmentation fault is basically you're in the
+
+SPEAKER 2
+wrong segment, right? And that's not a particularly useful area, but it is something that's triggered by the operating system as a signal
+
+SPEAKER 1
+to a process and so for those of you who watch my signal lecture, you would know that if you
+
+SPEAKER 2
+write a C programme you can actually redirect that signal so that when you receive a segmentation fault you do
+
+SPEAKER 0
+something. But most of the time that's a waste of time because you're still gonna throw the same segmentation fault because your code sucks because you've got a pointer to nowhere. Alright, alright.
+
+SPEAKER 1
+Yeah, I think we might take a 5 minute break
+
+SPEAKER 2
+for paging because paging is a bit of a um.
+
+SPEAKER 0
+Longer topic, are there any questions so far?
+
+SPEAKER 1
+Oh yes. Yeah. Um, does that It does, right, like so the the the question is, does bases and bounds protect you from overflow? And the answer is it depends, right? So the answer is broadly, yeah, that's the idea, right, like the base and balance says you're not allowed to
+
+SPEAKER 2
+have this memory within this region. But then the question is which bit of code are you running?
+
+SPEAKER 1
+Right, cause if you're running your own code, yeah, yeah, it works perfectly. But if you know that the operating system writer is a bit of a like a incompetent person, right, and
+
+SPEAKER 0
+you know that there's some function that they've got, and
+
+SPEAKER 1
+it takes a string, right, and you give them that string and they escalate to kernel mode to interpret that
+
+SPEAKER 2
+string, then, The bases and the bounds are off, right, and that's where you get these kinds of attacks where you're basically someone's written something in their operating system that's a little bit insecure in some kind of way, and so what you're doing is you're really like basically, I'll
+
+SPEAKER 0
+give you the I'll give you this buffer, right, read it, read all of it for me and then like actually it turns things into instructions and then you've destroyed the operating system. So that's sort of the, does that answer your question?
+
+SPEAKER 2
+Your take, yeah, so in general, yes, but you know
+
+SPEAKER 0
+like the answer is, you know, sometimes no.
+
+SPEAKER 1
+Uh, any other questions? Alright, cool, we'll have a break and then I'll be
+
+SPEAKER 2
+back in uh at what time is it?
+
+SPEAKER 0
+1:57. I'll be back at 2:02.
+
+SPEAKER 2
+Record again. Not missing the recording.
+
+SPEAKER 1
+Yeah, press and release the button to mute with the
+
+SPEAKER 2
+microphone. Alright, we're good, um.
+
+SPEAKER 1
+Just as a, I don't know, a piece of random advice, um, for something that's not explicitly obvious, and I guess I have to apologise in advance to all the students who, who went to, uh, Gracescope, um, and ran
+
+SPEAKER 2
+the original version of MiniShell.
+
+SPEAKER 1
+Um, this is something I inherited from.
+
+SPEAKER 0
+The, the deep distant past, um, no, um, basically within
+
+SPEAKER 1
+the assignment, um, for those of you who haven't started your assignment yet, um, there is this thing called MiniShell,
+
+SPEAKER 0
+which is part two of the assignment, so there's two parts to the assignment, there's the SPC systems programming revision
+
+SPEAKER 2
+part, and then there is the Minihell which is also
+
+SPEAKER 0
+a systems programming revision kind of part of the. of operating systems, um, the task is to uh make
+
+SPEAKER 1
+a shell, right, and at a convenience, right, there was this one line in the prompt of the mini shell. Now, to explain what this does, you know when you're typing into a terminal and it's got a little thing
+
+SPEAKER 0
+that comes up like a little arrow that says this is the terminal line, right, like um. I don't have my virtual machine running at the moment, so I'm not gonna be able to show you, but you know, it's, it's got a little, you know, uh, less than symbol or something where it says, you know, which shell it is or it tells you your whole username or something like that.
+
+SPEAKER 1
+Um, this is what that is the equivalent of, um, grade scopes marking script does not use this.
+
+SPEAKER 2
+So I have inserted, there's a new version of the MiniShell code and all it says is remove F printF statement for submission, right, just to ease that, um, process.
+
+SPEAKER 0
+Cool. Uh, other than that. We'll go back to uh lecture on page and.
+
+SPEAKER 1
+Oh right. So, we just discussed segmentation and we've discovered that the
+
+SPEAKER 2
+problem with segmentation is that you get external fragmentation.
+
+SPEAKER 1
+Now, the reason external fragmentation is bad, I think it's worth just sort of re-emphasizing why it is bad, like
+
+SPEAKER 0
+it's kind of obviously bad. Because it doesn't take a lot of thinking to work out how it could be bad.
+
+SPEAKER 2
+The main reason it is bad is because at runtime you might request memory, right?
+
+SPEAKER 1
+And you want to use all of your memory, right?
+
+SPEAKER 0
+All of your RAM.
+
+SPEAKER 1
+Because then you can run the most number of programmes
+
+SPEAKER 0
+simultaneously that you could possibly ever run, right? And that would be good.
+
+SPEAKER 2
+But when you request memory, you need to be given
+
+SPEAKER 1
+the memory, right? And the amount of time it takes for the operating system to work out where your memory goes needs to
+
+SPEAKER 0
+be really, really short.
+
+SPEAKER 2
+Now if your memory is this big long list of
+
+SPEAKER 0
+processes with holes in between and you are trying to
+
+SPEAKER 2
+find a hole that fits you, there is no really good way of doing that, other than checking all the
+
+SPEAKER 0
+holes, right? You're basically like, OK, do I fit in the first
+
+SPEAKER 2
+small hole, I do not, OK.
+
+SPEAKER 0
+Do I fit in the second small hole? I do not, right?
+
+SPEAKER 2
+And even if you like sort that list, which is
+
+SPEAKER 0
+gonna take a while as well, right, because you could potentially sort the list of all the memory, everything is
+
+SPEAKER 1
+going in and out of um memory so quickly, all
+
+SPEAKER 2
+these processes are doing stuff all the time that like sorting it doesn't really make much sense. Keeping like a like a an ordered list of it
+
+SPEAKER 1
+is non-trivial, and then searching through any kind of list or unsorted list is going to also be really non-trivial,
+
+SPEAKER 2
+right?
+
+SPEAKER 1
+So that's what we are trying to avoid.
+
+SPEAKER 2
+Right, and that is what leads us on to the idea of paging, right?
+
+SPEAKER 1
+So paging is basically, What base and bounces.
+
+SPEAKER 2
+We're gonna start with page um page uh base and
+
+SPEAKER 0
+bounds, right? So that's the logic of base and bounds with segmentation,
+
+SPEAKER 2
+external fragmentation, right, um, blah blah blah blah blah blah
+
+SPEAKER 0
+blah.
+
+SPEAKER 2
+Does it fit? Does it fit, right? So this is what I just said, right?
+
+SPEAKER 0
+So does this fit in there somewhere, right? I hate it when I make a mistake. I'm going to fix my mistake. External Fragmentation, that's external fragmentation, for those of you at
+
+SPEAKER 1
+home who only read the lecture slides, I'm sorry, um. Alright, you know, is it too big, like where does it fit, is it too big? Those kinds of questions, it's a non-trivial problem to try and solve, and it's not a problem that you want to solve ever, right? OK. So, the analogy that I like to use here is that of the array versus the linked list. So one of the things about that like is annoying
+
+SPEAKER 0
+about um, There's there's pros and cons to both of
+
+SPEAKER 2
+them, but one of the things that's kind of, you know, like when we think about arrays versus linked lists, we're saying, oh, OK, one of the problems with an
+
+SPEAKER 1
+array is that you have to put all the arrays somewhere, right? With a linked list, each node could be tiny, you can put it anywhere, right? So that's actually in some ways kind of good. The, the downside of course of a linked list is
+
+SPEAKER 2
+that if you can just put something anywhere, it takes
+
+SPEAKER 1
+a while to find stuff. Right, and we're gonna deal with this essential trade-off, right
+
+SPEAKER 0
+here when we're talking about paging, this is where we're gonna be at, this idea of like, oh, well maybe
+
+SPEAKER 1
+if we don't, you know, we, we let things be a little bit, you know, scattered haphazardly, right, we can make some.
+
+SPEAKER 2
+Space savings and maybe we can make some time savings, but at the same time, if it's not organised, we're gonna have some time costs, and basically paging, and the
+
+SPEAKER 1
+whole paging topic is all about trying to work out
+
+SPEAKER 0
+ways to sort of get the best of both worlds.
+
+SPEAKER 1
+Alright. So the idea here is what we're gonna do is we're just gonna turn memory into what is called pages,
+
+SPEAKER 2
+right, and it's that simple. We're just gonna have a thing, it's called a page, it's this big, right? And a page, I think it's 4 megabytes usually, or
+
+SPEAKER 0
+at least in 32 bit paradigm, it's like 4 megabytes, I think, something like that, um.
+
+SPEAKER 1
+And the advantage is that if we pixel art uh memory, there's no holes, or at least if there are holes, all the holes are the same size, right? So if I'm saying that like literally like a a
+
+SPEAKER 2
+really good example would be like um maybe like a filing cabinet, right, in a filing cabinet, um, you can
+
+SPEAKER 1
+imagine that if you have little like pieces of paper that go in the filing cabinet, every drawer of a
+
+SPEAKER 2
+filing cabinet takes the same number of pieces of paper,
+
+SPEAKER 0
+right?
+
+SPEAKER 2
+They're all the same size, right, and so if I
+
+SPEAKER 1
+have one drawer of filing cabinet stuff, I can always
+
+SPEAKER 2
+put it in a different filing cabinet, right?
+
+SPEAKER 0
+I, I can guarantee that whatever fits in one drawer
+
+SPEAKER 2
+will fit in any other drawer within my, you know,
+
+SPEAKER 0
+gigantic warehouse of filing cabinet drawers, yes.
+
+SPEAKER 2
+Yeah, you're correct, we have abstracted out, we've basically changed the scale at which the problem exists.
+
+SPEAKER 1
+It's still the same problem, but mm, is it the same problem? Like it is the same problem at a different, like, how would I put it, certain problems at certain scales
+
+SPEAKER 2
+are easier to solve than at other scales, right, because
+
+SPEAKER 1
+me being able to say how many pages my process
+
+SPEAKER 2
+needs is a pretty easy question to answer, right, like
+
+SPEAKER 0
+I can, I can work that out, right?
+
+SPEAKER 1
+Um. The other thing that's convenient about it is that if I put things into blocks, I can, I can grab things by page and then I can put the memory within the page, so I like the process handles where the memory is within the page, I don't have to think about that, right, so it's got that piece of information. Um, but the pages themselves that you go, I just need this, I need this much space in a filing cabinet, and I, I just go, you can have 4
+
+SPEAKER 2
+drawers, and you're like 4 drawers is enough. At that point in time, like we've, we've still got
+
+SPEAKER 0
+problems to solve, right? Like we, you're, you're entirely correct. There's like this, this doesn't really solve the problem, um,
+
+SPEAKER 1
+but it is slightly better, right, and we'll see that
+
+SPEAKER 2
+like how that plays out.
+
+SPEAKER 1
+It relies on a bunch of other things happening in
+
+SPEAKER 2
+order for, I think it to be better cos it to me, like my first impression was like how this
+
+SPEAKER 1
+is actually worse, and we'll see why because um.
+
+SPEAKER 0
+It it doesn't actually solve the problem, it it doesn't
+
+SPEAKER 2
+and it doesn't.
+
+SPEAKER 1
+Anyway, definitionally now we have no external fragmentation, right, because everyone is asking for one page at a time, all the pages are regular, this looks like a big array. We've turned memory into a big array of pages, right? Um, you can still have internal fragmentation, that is to say, if I give you a drawer in a filing cabinet, the drawer could be empty, right? So, or it could have holes in it, right, but
+
+SPEAKER 2
+that's not my fault, that's the processor's fault, and I'll
+
+SPEAKER 0
+pretend, you know, like that I'm no longer responsible for
+
+SPEAKER 2
+it.
+
+SPEAKER 1
+OK. So the first design consideration is, OK, we're gonna divide it into blocks or pages, how big is one page, right? Um, and this the the answer to this question is kind of like, Morphic resonance, I guess, you know, like one of those things where it's like, oh, it kind
+
+SPEAKER 2
+of works itself out in a way because you sort of have to ask a bunch of questions that tell you how big a page is gonna be, right? Like for example, how many pages can you have, right? Like, OK, well there there's a limit. I've got 32 bits in this case, right? I've got 32 bits or I can have 32 bit
+
+SPEAKER 0
+pages, right? Like that's how many pages I can have. I can have 32 bits worth of pages.
+
+SPEAKER 2
+Maybe I maybe I can't even actually have that many
+
+SPEAKER 0
+pages. Um, maybe I need some of those bits for other
+
+SPEAKER 2
+things, right? Um, but so that would be one limitation, um.
+
+SPEAKER 1
+How much can you address into a page, right, so again, like how many spots are there in a page?
+
+SPEAKER 2
+OK, well, there's a limitation there.
+
+SPEAKER 0
+I've got a limited number of bits, and how much
+
+SPEAKER 1
+of a, uh, how much space is wasted.
+
+SPEAKER 2
+So, you know, if your page is too big, there's gonna be a lot of internal fragmentation. If your page is too small, it's gonna be annoying
+
+SPEAKER 0
+to deal with lots and lots of pages, right? So again, if we go to the filing cabinets analogy,
+
+SPEAKER 1
+right, if each drawer in a filing cabinet is enormous,
+
+SPEAKER 2
+every process will fit into it, but like most drawers will be half empty.
+
+SPEAKER 1
+Um, likewise, if I have one process and I say you have 19 drawers in this warehouse and each drawer
+
+SPEAKER 2
+is in a different location, you're going to be very angry at me, right, like because of the number of times and the number of different bits of memory that
+
+SPEAKER 0
+you have to get your, um, Uh, files out of,
+
+SPEAKER 1
+OK. OK, so next question is, and this is where like the, the, the bulk of the rest of the lecture
+
+SPEAKER 2
+is gonna be about, it's like how do I get to a page, right, like what's the process? OK, so I think, This visualisation is really helpful because
+
+SPEAKER 1
+basically what it's gonna say is on the left you can see the process and how it thinks of its
+
+SPEAKER 2
+memory, and it's broken itself up in this case into 7 pages, and then on the right you'll see actual
+
+SPEAKER 1
+memory and where those pages are, right? So those pages have no correlation to their order in the process, right? So we're basically just doing a lookup table, right? So I'm like, you know, it, it's kind of like
+
+SPEAKER 2
+uh like an address book or something like that where
+
+SPEAKER 0
+you're like, oh, where does this person live? Oh they live in this location, then that location has nothing to do with their name, right? So we're gonna be in a similar kind of situation
+
+SPEAKER 2
+where there's really no correlation between, you know, where the
+
+SPEAKER 1
+page is in memory and where the page is in
+
+SPEAKER 0
+the process, so to speak.
+
+SPEAKER 1
+So the way that we're gonna do this is we're basically going to divide our address into two components.
+
+SPEAKER 2
+One is going to be the page number, where in memory you are. O Is that what it's gonna be?
+
+SPEAKER 0
+It's not what it's gonna be. It it looks like it's what it's gonna be, right?
+
+SPEAKER 1
+Um, it's actually gonna be like which page are you in a page table, right? The frame number, which is gonna be the same size as the page number, is going to be where in
+
+SPEAKER 2
+memory you are, right? And this is where it's gonna get a little bit
+
+SPEAKER 0
+like, I don't know where you like where what and the the the description, we're gonna be very, very tight with our language.
+
+SPEAKER 2
+Um, but we on the other side we have the
+
+SPEAKER 1
+intra page offset, right? And so if we think about it as pages, it's
+
+SPEAKER 2
+like which line of the page if we if we decide that memory is now a book, right, full of pages, right?
+
+SPEAKER 0
+Right, a reasonable analogy, the offset is going to be
+
+SPEAKER 1
+which line of the page, right, so we go, you
+
+SPEAKER 0
+know, like on page 900, read the 7th line, right?
+
+SPEAKER 2
+And this is going to be the same, right? So one of the things that's kind of convenient about paging is that like basically the intra page offset, we
+
+SPEAKER 1
+can just take that from the original address and just
+
+SPEAKER 2
+slap it into the final address.
+
+SPEAKER 0
+They're gonna be the same thing. So if this says you're on the 3rd line, you're
+
+SPEAKER 1
+gonna be on the 3rd line of the page.
+
+SPEAKER 2
+So there's no within page shuffling going on, it's just
+
+SPEAKER 0
+individual pages are shuffled around. OK.
+
+SPEAKER 1
+So, there's a whole bunch of choices, right, like as
+
+SPEAKER 0
+in, basically, if you have, you know, 4 low bits
+
+SPEAKER 2
+for your offset, then your pages are 16 bytes, if
+
+SPEAKER 0
+you have 9, then it's uh 512 bytes, if you have 10, it's 1 kilobyte, if you have 12, it's 4 kilobytes.
+
+SPEAKER 1
+Right? Um, and one thing to point out is that not all operating systems have pages that are the same size,
+
+SPEAKER 0
+which is like a bit of a brain. What's it called when you, when you melt your brain, one of those brain melting things.
+
+SPEAKER 1
+Um, but in general, and for the purposes of this course, we'll just assume that all pages are the same
+
+SPEAKER 0
+size most of the time.
+
+SPEAKER 2
+But you can imagine the reason that you would do
+
+SPEAKER 0
+it this way. Like, you can imagine there are some processes that use like gigantic slabs of memory, and you'd be like, maybe I'll just give you one big ass page, right? And there, there are some processes that are smaller and I'll give you small pages.
+
+SPEAKER 2
+Um.
+
+SPEAKER 1
+Alright, so how big is a page, usually for kilobytes, OK. How big is a page table?
+
+SPEAKER 2
+How many entries, OK, so let's do our math, right?
+
+SPEAKER 1
+So, in our page table, we're gonna use 12, It's 1212?
+
+SPEAKER 2
+Yeah. No, that doesn't write. Uh, 20, no, that, that math is off. Alright, so we're gonna use.
+
+SPEAKER 0
+Then uh Does that look better?
+
+SPEAKER 1
+That looked better. Uh, Maybe not.
+
+SPEAKER 0
+I'll change it back, see if that needs to be corrected.
+
+SPEAKER 1
+Um, basically, each one is 4 megabytes because each, each
+
+SPEAKER 2
+entry is 32 bits, which is 4 bytes, and there's 1000 of them, so it should be 210, right?
+
+SPEAKER 0
+So 2 to 10, um, yeah, it should be 210.
+
+SPEAKER 2
+I'll fix that up later.
+
+SPEAKER 1
+Um.
+
+SPEAKER 2
+So that's why we have 4 megabytes, right, like, um,
+
+SPEAKER 1
+basically 4 megabytes tells you how much offset you can
+
+SPEAKER 2
+have with within one page, right, like how many entries
+
+SPEAKER 0
+you can have within one page tells you why it should be 4 megabytes or it doesn't actually have to be 4 megabytes, right, so can change, but, um, most cases it 4 megabytes, right?
+
+SPEAKER 1
+Um, OK, so this is, this is the bit where like I got really confused when I was learning this,
+
+SPEAKER 2
+right, um.
+
+SPEAKER 0
+Or at least this is the bit where I got, yeah, got quite confused, right?
+
+SPEAKER 1
+What they said is they said, oh, OK, I have this page table, right, and there's 4 megabytes per process and I'm like, OK, cool, I get that, 4 megabytes per page, right? And they're like, no, no, no, 4 megabytes per process
+
+SPEAKER 0
+and I was like, I don't understand what that means.
+
+SPEAKER 2
+Why, why does every page, every, every process is one page? I have no idea what's going on, right?
+
+SPEAKER 1
+And then they were like, there's 100 processors.
+
+SPEAKER 2
+There's 100 processors and there's so so you've got like
+
+SPEAKER 1
+44, 400 megabytes for address mappings, and I was like,
+
+SPEAKER 2
+I don't understand what that means. So let me get out a little bit of a,
+
+SPEAKER 0
+I'm gonna just draw a picture manually, I think, to explain this little anomaly, cause I thought this was like this was a moment where I'll do it in paint, why don't we do it in paint?
+
+SPEAKER 2
+I found this really confusing.
+
+SPEAKER 1
+So If you can imagine, right?
+
+SPEAKER 2
+This is, this is where we get into the confusing
+
+SPEAKER 0
+part, right?
+
+SPEAKER 1
+So the process is gonna have like this bit of memory, right, and inside this bit of memory, there's gonna
+
+SPEAKER 2
+be like pages.
+
+SPEAKER 1
+Right?
+
+SPEAKER 2
+Pages.
+
+SPEAKER 1
+Yeah, and I'll say that these bits of pages are
+
+SPEAKER 0
+for my process, so I'll give it a colour, right?
+
+SPEAKER 1
+Cool, those are the pages that I want, right?
+
+SPEAKER 2
+OK.
+
+SPEAKER 1
+What if someone asks for an address that I don't care about? Right? Because there's this page table, what's inside the page table?
+
+SPEAKER 2
+The page table's filled with addresses, so I'm gonna be
+
+SPEAKER 1
+like, this page is in the first block of the page table, and that points to some bit of memory. That's cool. And if they ask for the second one, that points
+
+SPEAKER 2
+to a different bit of memory and then they go
+
+SPEAKER 0
+to the third one that points to the third bit
+
+SPEAKER 2
+of memory, and the page table is easy to find because every process has the address of its own page table, right, so.
+
+SPEAKER 1
+I could be like, hey, hey, hey operating system, this is my page table location, it contains where all of my pages are, my page 1 is in location, you
+
+SPEAKER 0
+know, 500, my page 2 is in location 300, my
+
+SPEAKER 2
+page 3 is in.
+
+SPEAKER 0
+Location 400 or whatever, right, and then, and this is
+
+SPEAKER 1
+where it dawned on me, it's like, how big is the page table, right, like how big is it? Like how many entries are in the page table, right? And it turns out the number of entries in the page table is 4 megabytes worth of entries, right?
+
+SPEAKER 0
+There's, there's a lot of them, right?
+
+SPEAKER 2
+There are 4 megabytes, that sounds like 2 to the power of 22. There's 22 the power of 22 entries in my page table, and I'm like, there's 22 of 22 entries in
+
+SPEAKER 1
+my page table. So this is where the process is like, oh yeah, you could ask for, you know, the 500th page, and
+
+SPEAKER 2
+I'm like I don't use the 500th page and it's like I don't care, but I could still ask for the 500th page and you have to be able to
+
+SPEAKER 0
+tell me where it is, right?
+
+SPEAKER 1
+Um, and so basically you end up with this page table that's actually really, really huge cos it's basically mapping all of memory for every process, right, and that's where
+
+SPEAKER 2
+the this this logic goes where it's like this is, And this is where, where the, the penny drops, where
+
+SPEAKER 1
+you're like, OK, so this is memory, right? And then I've got my little page table, right, and
+
+SPEAKER 0
+my little page table is pointing at these bits of memory, right, so you know, like part of it might point here, and then another part of this same thing might point there, right?
+
+SPEAKER 2
+OK, and this is the realisation.
+
+SPEAKER 1
+Where is this block? This block here. Where is this page table? What is it? It's in memory. Right, right, it's a, it's it's a thing, it has to be in memory. I have a page table and my page table is now in memory. Oh wait, so I'm, I'm going to memory to find out where my memory is. Oh, now I see the problem, right, because basically what's gonna happen is the, you know, oh this is going, alright, do instruction number one, and I'll be like instruction number one, OK, where's my page table?
+
+SPEAKER 2
+Instruction number one, and it's like instruction number one is
+
+SPEAKER 1
+in my page table, go and get my page table. And OS is like, OK, I'll go and get your page table. Fine, I've got your page table. Alright, cool. And according to my page table in the first entry, it's actually in this memory address and you're like, OK,
+
+SPEAKER 0
+OS, alright, alright, I'll go off to.
+
+SPEAKER 2
+Alright, and I'll go off and get the second address
+
+SPEAKER 1
+and I'll be like, OK, is this your actual data, right? So it's doing two go, right, one to get to
+
+SPEAKER 2
+the page table, right, this page table information, and the
+
+SPEAKER 1
+second is to get with the actual address of the, the bit of memory, right? And the page table itself is enormous, right? It's 4, it's 4 megabytes, right, right, which is, you
+
+SPEAKER 2
+know, it sounds like a lot.
+
+SPEAKER 0
+Well, I don't know, it doesn't sound like a lot nowadays, but if you can imagine you had, you know,
+
+SPEAKER 2
+1 page table for every process and then you go
+
+SPEAKER 0
+like, OK, excuse me while I go to my, you know, task manager and count the number of processes. That's running on my computer that's not doing anything useful,
+
+SPEAKER 1
+right? I have hundreds of processors running and I don't know
+
+SPEAKER 2
+what like 90% of them do. If I have 4 megabytes for each of these, like, very quickly I'm using all of my memory just to
+
+SPEAKER 1
+keep track of where my memory is, which sounds like
+
+SPEAKER 0
+an insane proposition. OK, um, and so here, here's the idea, it's like
+
+SPEAKER 1
+the, the problem we're trying to solve is that we are wasting memory because of fragmentation and the solution is to have 400 megabytes of memory devoted to working out
+
+SPEAKER 2
+the solution to where our memory should be.
+
+SPEAKER 0
+It's really, really bad, OK.
+
+SPEAKER 1
+Anyway, so this is the probably the one I prepared earlier, right? So the idea here is that what we're gonna do is we're gonna have the virtual page number at the start and then we're gonna have an intra-page offset, right? So basically we'll use the VPN right to work out where in my page table, so this green one, which
+
+SPEAKER 2
+is actually in memory, right, where the physical frame number
+
+SPEAKER 1
+is and then from there I can get the page and from the page I can get the offset, right?
+
+SPEAKER 2
+And then within the page I can get the offset and.
+
+SPEAKER 1
+So this gives you an idea of what's going on, and you can see here that the process is doing two reads, one to get the page table and one to get the memory, right, so I'm like, how is this better in any conceivable way, right, like, like it's it's, it's actually feels really, really bad. Um, And if we think about it in terms of steps, we have, you know, I can get the VPN that's fast, I can calculate it's page table entry, that's really fast, but reading the page table entry from memory is going to be slow. It's like reading the memory in the first place. So every time I read memory, I'm now reading memory
+
+SPEAKER 2
+twice. Why on earth would I do it this way?
+
+SPEAKER 0
+It seems like an insane proposition, right?
+
+SPEAKER 1
+And I'm also using 4 megabytes of memory per process
+
+SPEAKER 0
+to do this, right? I was like, OK, so I'm gonna use lots of
+
+SPEAKER 2
+memory to slow down my memory reading.
+
+SPEAKER 0
+Yay, to solve what problem?
+
+SPEAKER 2
+OK.
+
+SPEAKER 1
+To solve one problem, we no longer have external fragmentation, right? And so paging, you can imagine whoever proposed paging, everyone
+
+SPEAKER 2
+was like staring at them and go, I don't understand how this is the solution. OK, yeah, you don't have external fragmentation, but you caused
+
+SPEAKER 0
+all these other problems, right?
+
+SPEAKER 1
+Um, all the pages are the same size, yeah, that,
+
+SPEAKER 2
+that, that sounds kind of convenient. Um, it's fast. To allocate and free, yes, it is faster allocate and free. So when you want to get a page, making the
+
+SPEAKER 0
+page is really easy because it's a standard sized block.
+
+SPEAKER 1
+You just go to the first free page, like free
+
+SPEAKER 2
+slot, and you just keep track of the first free slot and you just plonk it there, right?
+
+SPEAKER 1
+Um, and you can swap one for another.
+
+SPEAKER 2
+Yeah, all right, cool.
+
+SPEAKER 1
+They're really big, it's really slow. There's still some internal fragmentation and yeah, yeah, um. Yeah. OK. OK, so why are we doing this? Uh, before we move on, right, before we move on,
+
+SPEAKER 2
+there's a couple of other things that we need to think about with pages, right, and then be like, OK,
+
+SPEAKER 0
+we're going down this dumb solution, why on earth are we adding more to this dumb solution?
+
+SPEAKER 1
+Um, it, it will become good later, but, um, basically there's a couple of things that we can do. One is things like validity, so you can be like, actually this is not a real page, right? So in the page table you could be like, you know how I said like the page table's gonna keep like references to every conceivable bit of memory, like if
+
+SPEAKER 2
+someone asks you for a bit of memory that you're not using. Right, well you can say that I'm not using it
+
+SPEAKER 0
+so it's invalid, like it's an invalid kind of bit of memory, right?
+
+SPEAKER 2
+Um, I can say that some pages are for reading
+
+SPEAKER 1
+and writing.
+
+SPEAKER 2
+I can say some are for executing, so code can
+
+SPEAKER 0
+be executed but not read, right, and you know some things can be read and written, but you can't execute the heat or something like that, right?
+
+SPEAKER 1
+um. There's a present bit, a reference bit, and a dirty bit. Um, we'll talk about that in the next lecture, and but they're basically keeping track of how available these pages
+
+SPEAKER 2
+are. Like dirty just means that someone's modified a page, right? So if someone modifies something in memory, if they haven't modified it, that makes things really easy because when I
+
+SPEAKER 0
+don't want it anymore, I can just get rid of it because I'm not changing anything, um.
+
+SPEAKER 1
+So, OK, OK. It was like, OK, I've got this insane paging idea,
+
+SPEAKER 2
+can, can I make it work?
+
+SPEAKER 1
+Alright, so we'll start with inverted page tables. Alright, so. I, I, this appeals to someone on the planet.
+
+SPEAKER 2
+It does not appeal to me. I, I remember reading about this and like, well, this
+
+SPEAKER 0
+appeals to computer scientists, and I'm like, this sounds insane,
+
+SPEAKER 2
+right? Basically in a page table for each virtual address, where is the physical address? That's the question that I'm asking, right?
+
+SPEAKER 1
+Um, for an inverted table, for every physical address, where is the virtual address?
+
+SPEAKER 2
+You're like, wait, what? What? What am I doing here?
+
+SPEAKER 1
+Like as in like, OK, OK, I get, I get
+
+SPEAKER 2
+it, I get it, alright, so the advantage is, instead
+
+SPEAKER 1
+of having this table that points at all these things
+
+SPEAKER 2
+I I'm not using, I just have a smaller table
+
+SPEAKER 1
+that points at all the things that I am using,
+
+SPEAKER 2
+and I have a list of all the things that
+
+SPEAKER 0
+I am using, and I can tell you the virtual address of all the things that I am using, and I can use that to try and tell you stuff. Um, I'll get to a good analogy in a minute,
+
+SPEAKER 2
+but like, basically, here, the problem with the page table
+
+SPEAKER 1
+is we're mapping virtual addresses we aren't using, right? And that makes sense, right, we've got these virtual addresses
+
+SPEAKER 2
+that we aren't using that we don't care about, and we're mapping them to physical hardware for no reason.
+
+SPEAKER 1
+Um, In the inverted table we only care about pages which are physically mapped, right, so basically we're saying the only pages for a process that we care about are
+
+SPEAKER 2
+the ones that we're actually going to do stuff with, right? Um, and we can do it via hash tables which
+
+SPEAKER 0
+makes it sound like it's fast, but really it's going to be quite slow, right?
+
+SPEAKER 1
+And, and why this is a non-solution, it's like, what do I have? OK, I have a virtual address, what do I need? a physical address, right? Right, that's what I'm gonna give you, right? Like I, I, I, I have a, I have a virtual address and I'm gonna be like, where is my memory, right? And the way that this inverted table solves that problem, it's going, I know where all the memory is, and
+
+SPEAKER 0
+then uh you can look through that list to find where your memory. It's, it's here somewhere, right?
+
+SPEAKER 2
+So if you're in the process, you basically have to
+
+SPEAKER 1
+go through here and be like, um, I'm looking for the entry in the table that refers to the page, the virtual page number that I care about, right, so
+
+SPEAKER 0
+you end up having to search this.
+
+SPEAKER 2
+And yes, you can do it via hash tables to make it slightly more efficient.
+
+SPEAKER 1
+But I need to search, and searching is slow, so
+
+SPEAKER 2
+why on earth would I ever do it this way, it's a non-solution. I like, like I.
+
+SPEAKER 1
+I don't know, someone wrote a paper on this or something and everyone was like, oh yeah, that's kind of clever but useless. Um, OK. Then we have segmentation paging, right, and you're like, oh
+
+SPEAKER 2
+god.
+
+SPEAKER 1
+No, no. We've been here. Why would you do this? OK. If, if you've got a bad solution to something, what you could do is you combine it with another bad solution to something good. All right, so basically what we're gonna do is we're gonna divide it up into segments again and break each segment into pages, and then we're gonna use segmented bits
+
+SPEAKER 2
+and, oh my God, I don't know whose idea this
+
+SPEAKER 0
+was, but it's, it's terrible, right? Like, basically the idea is that we're gonna do the same thing.
+
+SPEAKER 1
+Um, but we're gonna just break things up into segments for no reason, and then, you know, like the, the
+
+SPEAKER 2
+code segment, it's gonna have a different set of pages to the other segment. I'm like, what, what, what does this achieve other than
+
+SPEAKER 1
+you join two words together, someone's like, oh, I think
+
+SPEAKER 0
+I'll do a PhD project on both segmentation and paging,
+
+SPEAKER 2
+and someone's like, oh, that sounds like that could be
+
+SPEAKER 0
+a thing. Oh.
+
+SPEAKER 2
+No thanks. Um, basically you end up with, you know, the same
+
+SPEAKER 1
+problems, right, like it's the same problems that segmentation has. So segmentation paging, you know, like because it's segmentation, yeah, you can try and be a bit more sparse with
+
+SPEAKER 2
+your encoding, you can say this bit is here and that bit is there, whatever, right?
+
+SPEAKER 1
+Um, and there's pages, so there's no external fragmentation, it's great, um. One of the big problems is that you can't share memory with this very easily because in the segments you have to specify which bit of memory that you want and the segment, and which segment wants whatever, right, that
+
+SPEAKER 0
+doesn't seem like a good idea, um.
+
+SPEAKER 1
+We now have segmentation and paging. They don't work the same way, right, like at a like a a low level hardware way, the way that you implement them is different from each other, right, so that's not good either. Um, the segments have size limits, you know, like, OK, so you know some of them are going to be fixed size, but things like stacks and heat might grow, um, and again you've still got these large page tables,
+
+SPEAKER 2
+so what is the point of this, right, like cause
+
+SPEAKER 0
+it's not solving the problem that we're trying to solve.
+
+SPEAKER 1
+Right, we've still got these giant page tables and yeah,
+
+SPEAKER 2
+they're slightly smaller, right, like as in, I feel like
+
+SPEAKER 0
+we saved a megabyte, maybe, right, in this whole process, because we've got 3 page tables and they're all slightly smaller than the previous page table. Alright, hooray.
+
+SPEAKER 1
+Um, OK, and this is where we get to an actual solution, right? This is an actual solution to the problem. Multi-level page tables, right? And this is, this is where we start getting like
+
+SPEAKER 2
+clever. Someone, someone's actually getting clever, right?
+
+SPEAKER 1
+And so the idea is you're like, OK, what if instead of. Having this massive page table that is 4 megabytes big,
+
+SPEAKER 2
+we just have like a table to other tables, right? And the, you know, our, our original table is small
+
+SPEAKER 1
+and it points at other tables, right?
+
+SPEAKER 2
+So what I do is I get my first table and then I get it to point to my second table and each of these tables can be kind of
+
+SPEAKER 1
+small, right? So none of them are big, so for every process I have a kind of small table. Yeah, sounds good. Alright. So, I think. I think this, if you watch this example very slowly
+
+SPEAKER 2
+and repetitively, you will eventually understand not only how paging
+
+SPEAKER 1
+works, but how multi-level paging works, right, because I, I,
+
+SPEAKER 0
+I spent a fair bit of time going into this example, mostly to just explicitly explain how it works. So, we are given some address, right?
+
+SPEAKER 1
+The process knows this address number, we are going to. Know that the value X is stored here, right, this is the number, this is how it thinks of it, right? We're going to break it up into segments and so you can see here that I think the last one does have indeed 1212, right, so whatever I had before
+
+SPEAKER 0
+I think was correct, it's got 12.
+
+SPEAKER 2
+Um, sorry, the, the conversion to bytes and 32 bits
+
+SPEAKER 0
+always breaks my brain.
+
+SPEAKER 2
+Um, so we've got 3 bits, so this is a
+
+SPEAKER 1
+multi-level page table, it's got 2 levels, right? The 1st 10 bits are the first level. The 2nd 10 bits are the second level. The 3rd 12 bits, 3rd 12, the last 12 bits
+
+SPEAKER 2
+are the offset.
+
+SPEAKER 0
+1, 2, offset.
+
+SPEAKER 2
+OK, simple enough.
+
+SPEAKER 1
+What we're going to do is we're going to go to a page table, right? Now this page table isn't that big because it's only got 10 bits, right?
+
+SPEAKER 2
+10 bits, how many is that?
+
+SPEAKER 0
+That's like uh to the power of 10, that's 1000,
+
+SPEAKER 2
+24, um.
+
+SPEAKER 0
+So it's like kilobytes maybe, right, yeah.
+
+SPEAKER 2
+It is, yeah, no, and as an analogy it's kind
+
+SPEAKER 0
+of similar, like it's a similar kind of idea, right, like you're basically, um, for those of you who've done
+
+SPEAKER 2
+systems programming, you have I nodes, Inodes contain lists to
+
+SPEAKER 0
+other lists of I nodes, right, uh, it's a way of, um, grouping together gigantic files.
+
+SPEAKER 2
+So it's very similar, right, so here.
+
+SPEAKER 1
+What we're gonna do is we're gonna take that 1st 10 bits and we're gonna look at entry number 0011001101, right? This glorious 10 bit number and inside this, I'm gonna
+
+SPEAKER 2
+write hex to make it more memorable, right, we're gonna check if it's valid first, right, so we have a
+
+SPEAKER 0
+valid bit, right, and it is valid, and then we're
+
+SPEAKER 1
+gonna get its address, and inside this, right? We're gonna grab it. Now, um, the main culture wise is this is called the page directory, right, that points at a page table,
+
+SPEAKER 2
+essentially, right, um, so the the the the like the the root node of this tree is called a page directory rather than a page table by convention, but it
+
+SPEAKER 0
+basically it's just another page table, right, and inside we
+
+SPEAKER 1
+have the address aba aba right now.
+
+SPEAKER 0
+OK, we're like, OK, Abba Abba, I don't know. That's, that's um 32 bits, right, cos it's uh 8 times 4, right, so 30, 32 bits, and what we're
+
+SPEAKER 1
+gonna do now is we're gonna say Abba Abba is the address of another page table. So we're gonna go through our memory and we're gonna find the bit of memory that has Abba Abba in
+
+SPEAKER 2
+it, right?
+
+SPEAKER 1
+Yeah, and we're gonna go, hey. This is, you know, like I don't know, the aba
+
+SPEAKER 2
+aba bit of memory, so we count down from the
+
+SPEAKER 0
+start, like obviously we can do this really quickly because it's like an array and we can just immediately index
+
+SPEAKER 2
+it.
+
+SPEAKER 1
+And so this is at address aba aba, there is another page table, and what we're gonna do then is we're gonna say, OK, cool. What is in Address 1111000011 of the Abba Abba page
+
+SPEAKER 2
+table, the the the page table located at Abba Abba.
+
+SPEAKER 1
+It's beef beef. Yay, alright, so if we go into that, there's another address, and that address is beef beef, right? And so we're gonna go back to memory and we're gonna find beef beef in memory. And then we're gonna go to the beef beef. Which is the page at this point because we've got, you know, like we're down to the offset, right in the green, and we're gonna find the second entry in our beef beef bit of memory in our beef beef page, right, and that is going to be the value X. This is the explanation for paging. If you understand this example, you understand paging.
+
+SPEAKER 2
+If you don't understand this example, watch it again, and if you don't understand it after 3 times, then come
+
+SPEAKER 0
+and see me in the lecture, and I'll give you I'll give you another explanation which is very similar to this one, but maybe with more explanation.
+
+SPEAKER 1
+Um, but that's basically how it works, right? So what we're doing, and it's really important to pay attention to the difference between an address and the value
+
+SPEAKER 2
+in that address.
+
+SPEAKER 0
+So like this is, you know, like, this is pointers again, right, like every time everyone's pointers they're like pointers,
+
+SPEAKER 2
+a pointer at a pointer of a pointer. Oh god, um, but you can see here, right, like
+
+SPEAKER 1
+the first part is the address from which we get
+
+SPEAKER 2
+the, Inside is another address, right, and that's where that
+
+SPEAKER 1
+page table is, and within that page table we're looking at sort of the offset from that, right? So basically it's ABBA plus 1111000011, right?
+
+SPEAKER 0
+That's the memory address of where that would actually be
+
+SPEAKER 2
+in memory, right?
+
+SPEAKER 1
+And inside that there is a number and that number is beef beef, and then we go to beef beef, and then we basically add 2 to beef beefs, right?
+
+SPEAKER 2
+Like so obviously it wouldn't actually be beef beef, it
+
+SPEAKER 0
+couldn't end in an F, right, it would end up in a zero, probably, but you know, like I made a beef beef to make it more funny. Um, Maybe I should have done beef 000 00, I don't know. Anyway, and there therein lies the value of X, right?
+
+SPEAKER 1
+And then like in 64 bit implementation, yeah, you can
+
+SPEAKER 2
+have like, you've got like 52 bits to spend, right, on your, um, multi-level address tables. And obviously, um, the, the problem with 64 bit is
+
+SPEAKER 1
+that no one actually uses 64 bit address mappings because
+
+SPEAKER 2
+64 bits worth of address is a lot of memory.
+
+SPEAKER 0
+Like, as I said at the start, it's like billions and billions, and no one needs exoytes, I don't think just yet, except maybe, I don't know, Google and Facebook.
+
+SPEAKER 1
+Um. And each page page table needs to fit inside a page, which is totally fine because our page tables are
+
+SPEAKER 2
+actually now quite small, right? um.
+
+SPEAKER 1
+So you've got choice, right, like basically here you can either have them being really, really big, like as in
+
+SPEAKER 2
+very long, like many, many entries, or if you have
+
+SPEAKER 1
+multiple of them and they point at each other, then
+
+SPEAKER 2
+they can be quite small and more manageable.
+
+SPEAKER 1
+Um, and yeah, sorry, the, the point here is in
+
+SPEAKER 2
+64 bit, like the page tables may be enormous, but
+
+SPEAKER 0
+then you actually just like cut off half of it because you don't use it. Um, because you just don't have that much like addressable memory.
+
+SPEAKER 1
+So if we get it like the summary, I don't
+
+SPEAKER 0
+know, other than how to, um, I don't know, deal with a multi-level page table, um, linear tables are too
+
+SPEAKER 1
+big, right, for paging, right, so that seems pretty good. Um, how the operating system puts it up, does this
+
+SPEAKER 0
+is up to you, right? Like as in like there's lots of different ways that the operating system can implement this, but like this is the general idea, um.
+
+SPEAKER 1
+Oh yeah, um, some, sorry, sorry, sorry, sorry, sorry. What that's really meant to say is that like if the handling of the page tables is done by the
+
+SPEAKER 2
+operating system, then it can be done in a huge variety of ways, but not all, um, not all systems
+
+SPEAKER 1
+allow you to do this.
+
+SPEAKER 2
+A lot of them have it sort of implemented in hardware which kind of makes sense.
+
+SPEAKER 0
+Um, so like Vaccine X86 for example, have it organised in hardware, um, but designed in such a way that
+
+SPEAKER 2
+each page table fits within a page, right, like, so there's, you know, like once we get down to the low level implementation of this, um, which I don't think
+
+SPEAKER 0
+is particularly relevant for this course, um. You can imagine that like you get into some nitty gritty details of data structures and how, how you do all these pointers and how do you do these things looking up, like looking up memory efficiently.
+
+SPEAKER 1
+Um, but generally, yeah, so today we've covered address translation, base and bounds, segmentation page tables, and advanced page tables.
+
+SPEAKER 2
+Are there any questions?
+
+SPEAKER 0
+I'm just gonna pause and then, oh, are there any
+
+SPEAKER 2
+like public questions and I can do, oh, there's a
+
+SPEAKER 0
+public question. Yes.
+
+SPEAKER 2
+Alright, so the, the, the, the prime benefit of multi-level paging is that the page, what's the magic word for
+
+SPEAKER 0
+it, there was a magic word.
+
+SPEAKER 2
+Directory does not take up much space in memory, right?
+
+SPEAKER 1
+And, One of the things that you can do, right, is that you see how there's a valid bit.
+
+SPEAKER 2
+This is going to point at another page table.
+
+SPEAKER 1
+But maybe you don't need it. So you just mark it as invalid and so it's never in memory.
+
+SPEAKER 2
+So you basically go, no, no, that's a null pointer,
+
+SPEAKER 0
+don't worry about that, right?
+
+SPEAKER 2
+So you basically go, I'm only using like the first 3 of them and I can mark them individually as saying they don't exist. And if you think about what that means is that in a regular page table, if you wanted to do the same thing.
+
+SPEAKER 1
+You'd have thousands of entries with zeros in them, but because this is so much smaller, you're basically going this entire set of bytes, right, and if we go to,
+
+SPEAKER 2
+you know, like this example here with the the page table, you can imagine you're basically saying I'm summarising all
+
+SPEAKER 1
+of the blue numbers which would all be individual divisions of pages. As one thing, and I'm saying blue is wrong at
+
+SPEAKER 2
+this point, everything in this entire address space, like every,
+
+SPEAKER 1
+every, every conceivable number after all the red ones is
+
+SPEAKER 0
+now not valid for memory, and so you just go, it's not valid, don't worry, don't worry, operating system, don't, you don't need to think about that stuff. So those are the two main advantages.
+
+SPEAKER 2
+Yes.
+
+SPEAKER 1
+Oh yeah, yeah, no, once, once, once we're, we're in
+
+SPEAKER 0
+um paging, we don't use face and bounces anymore.
+
+SPEAKER 2
+Uh, So, um, basically what's gonna happen at that point
+
+SPEAKER 1
+in time, oh, that's a good question actually.
+
+SPEAKER 2
+Give me a second to think about it because I, I don't want to spout nonsense, um.
+
+SPEAKER 1
+Essentially what you can do at that point in time is talk about like the validity of individual pages, right,
+
+SPEAKER 2
+like as in like, basically, is this page your page? Right, it's the way that you can like the operating system can then go, hang on a second, this page
+
+SPEAKER 0
+is not your page, right, and I can double check. That as a as an operating system rather than just saying arbitrarily you're you know in this space in memory, it's this is where you um for a page and
+
+SPEAKER 2
+the other thing that you can do is when you ask for a page, it can be like um like I want this page plus an offset and be like that's not within the page that you asked me for,
+
+SPEAKER 1
+right? And so each page is its own base and bounds
+
+SPEAKER 0
+kind of implicitly. Makes sense?
+
+SPEAKER 2
+Yes.
+
+SPEAKER 1
+Um, OK, so in practise I think like basically what
+
+SPEAKER 2
+ends up happening is that you end up with either, um, a number of the bits are just, you know,
+
+SPEAKER 0
+as flag bits, so there's some extra flag bits, so part of the number is either a flag bit, or you're just storing an extra, um, Little bit of data associated with the process, right, like, or associated with the page table, so the page table, actually the entries, there'll be two entries or something like that, right? Um, cause they're, they're like this is sort of a simplistic version you can imagine that you might sacrifice 6 bits of it or something like that and be like, oh this is the valid bit, this is the dirty bit, this is the something bit.
+
+SPEAKER 2
+All good. All right.
+
+SPEAKER 1
+Um. I'll have the other kind of questions, alright, um, have a good weekend everyone.
+
+SPEAKER 2
+Um, I'll be here for another like 20 minutes, so, OK, bye.
