@@ -232,6 +232,10 @@ void producer(item) {
 
 *Instructor Example*: "Imagine the buffer is full (10 items). Producer acquires `mutex`, then tries to wait for `emptySlots` but there are none. Consumer has acquired `fullSlots`, wants `mutex`, but producer holds it. Both threads block forever."
 
+> 🔄 **Deadlock Walkthrough**: (1) Buffer is full so `emptySlots == 0`. (2) Producer grabs `mutex` and then blocks on `sem_wait(emptySlots)`, falling asleep while still holding the lock. (3) Consumer wakes, passes `sem_wait(fullSlots)`, but blocks on `mutex`. (4) Producer cannot wake because it's waiting for `emptySlots`; consumer cannot free a slot because it can't enter the critical section. Circular wait achieved.
+
+> ✅ **Rule of Thumb**: Acquire counting semaphores (`emptySlots`/`fullSlots`) before the mutex so any thread that sleeps does so without holding the mutual-exclusion lock.
+
 ---
 
 #### Deadlock Theory
@@ -318,6 +322,14 @@ A deadlock avoidance algorithm used to determine if it's safe to allocate resour
 5. **P1**: Need = (0,7,5,0) ≤ Available → Run P1
 
 *Instructor Note*: "This is why it's called the 'Banker's Algorithm' - you're like a banker deciding whether to loan money based on your ability to repay."
+
+##### Why Banker's Algorithm Isn't Widely Deployed
+- **Needs perfect knowledge** of each process's maximum demand—rare outside of tightly controlled workloads.
+- **High overhead**: Every allocation requires simulating future schedules to prove safety.
+- **Too cautious**: Rejects requests that are safe in practice because *some* hypothetical order might deadlock.
+- **Modern practice**: Systems prefer detection + recovery, lock-ordering conventions, timeouts, or lock-free designs.
+
+> 📌 **Bottom line**: Banker's algorithm is great for teaching resource allocation theory but seldom appears in production kernels.
 
 ---
 

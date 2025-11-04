@@ -249,7 +249,7 @@ lock = 1;   // Overwrites what Thread A did!
 
 ##### 1. Disable Interrupts (Bad Idea)
 - *How it works*: Thread disables all interrupts during critical section.
-- *Why it fails*: Only viable for kernel code; can make system unresponsive.
+- *Why it fails*: Interrupt masks affect only the current CPU. Other cores keep running and can enter the critical section, so races remain. Even on a single core the OS misses timer interrupts, freezing scheduling and I/O.
 
 *Instructor Insight*:  
 > "This would be like telling the entire school 'no one gets to talk until I'm done speaking'—it's a terrible idea unless you're the principal."
@@ -271,8 +271,13 @@ lock = 1;   // Overwrites what Thread A did!
   ```
 - *Why it fails on multi-core systems*: Cache inconsistencies and instruction reordering.
 
-*Instructor Insight*:  
+*Instructor Insight*:
 > "This works for two threads, but when you have multiple CPUs with different caches, the 'turn' variable might not be consistent across processors."
+
+##### Lock Convoys: Hidden Performance Killer
+- **What happens**: Thread A grabs a lock and is preempted. Threads B, C, and D wake up, contend for the lock, block, and burn CPU cycles context-switching.
+- **Why it matters**: Throughput collapses because the lock holder isn't running, while the scheduler wastes time rotating blocked threads.
+- **Mitigations**: Keep critical sections short, use blocking mutexes that park waiters, apply priority inheritance, or adopt lock-free algorithms when contention is high.
 
 ---
 

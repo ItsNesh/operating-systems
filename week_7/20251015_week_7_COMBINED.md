@@ -192,6 +192,14 @@ DMA Controller: Interrupts CPU when done
 
 *Instructor Emphasis*: "DMA is critical for performance because it frees up the CPU to do other tasks during data transfers."
 
+#### Practical Considerations for DMA
+- **Setup overhead**: The CPU still has to program source, destination, and length registers—usually a few microseconds.
+- **Tiny transfers**: Moving a handful of bytes may complete faster with programmed I/O than paying the DMA setup cost plus the interrupt on completion.
+- **Break-even size**: Typically 64–256 bytes depending on hardware. Above that threshold the CPU saves time by letting DMA stream the data.
+- **Channel contention**: Legacy buses had limited DMA channels; modern PCIe devices arbitrate for bandwidth but can still throttle one another under heavy load.
+
+> 📏 **Guideline**: Use programmed I/O for register pokes, DMA for bulk transfers like disk blocks, network packets, or video frames.
+
 ---
 
 ### Interrupts vs Polling
@@ -330,6 +338,17 @@ Linux treats all resources as files:
 #### Wear Leveling
 - SSDs have a limited number of erase cycles (typically 3,000–100,000)
 - **Wear leveling** distributes writes across the drive to prevent premature failure
+
+**How the Flash Translation Layer Spreads Wear**
+- Tracks erase/program counts for each block so hot data (logs, swap) is rotated across the device.
+- Remaps logical block numbers to new physical pages on every rewrite, keeping the OS oblivious to the movement.
+- Performs background garbage collection to relocate cold data onto older blocks, preserving fresher cells for future writes.
+
+**Extra Capacity for Durability**
+- SSDs include spare flash (over-provisioning) beyond the advertised size to replace failing blocks and give the FTL room to juggle data.
+
+**Why Writes Lag Reads**
+- Reads simply sense charge (~25 μs), whereas writes must erase an entire block (~1.5 ms) before programming (~200 μs), so small random writes are the worst case without buffering and coalescing.
 
 *Instructor Insight*: "Without wear leveling, an SSD would fail after just one year of normal use. Wear leveling ensures even distribution of writes."
 

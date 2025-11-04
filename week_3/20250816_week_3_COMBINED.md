@@ -52,6 +52,10 @@ This lecture explores fundamental memory management concepts including segmentat
 - Requires complex management of multiple base/bounds pairs
 - Leads to the term "segmentation fault" when accessing invalid segments
 
+> 🔍 **Fragmentation Example**: `[Code: 10MB][Free: 4MB][Heap: 8MB][Free: 2MB][Stack: 6MB]` leaves 6 MB total free, but there is no
+> contiguous 6 MB region. A new 6 MB segment cannot be placed without expensive compaction, so the system wastes memory despite
+> plenty of aggregate free space.
+
 #### Key Insight from Transcript
 > "Segmentation was a non-solution that looked like it might solve our problem, but ultimately didn't address external fragmentation. It solved none of our problems while making things look more organized."
 
@@ -92,6 +96,10 @@ Number of entries = 2^20 (for 32-bit addressing)
 Size per entry = 4 bytes
 Total page table size = 2^20 × 4 bytes = 4MB
 ```
+
+> ⚠️ **Why 4MB Hurts**: With 100 processes the OS devotes ~400 MB of RAM to page tables alone—more than the main memory of many
+> historical machines. Modern systems therefore rely on multi-level page tables, inverted tables, or larger page sizes so they
+> only allocate entries for portions of the address space that are actually touched.
 
 ---
 

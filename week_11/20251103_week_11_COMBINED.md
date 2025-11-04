@@ -162,6 +162,13 @@ $$Data = \frac{0.9 \times 100\text{ MB/s} \times 0.005\text{ s}}{1 - 0.9} = 45\t
 
 This means our segments should be about **45MB** to achieve 90% of peak performance.
 
+###### Segment Size Trade-offs
+- **Large segments** maximize throughput but require more RAM for buffering, increase crash-recovery windows, and can delay flushes until the buffer fills.
+- **Small segments** improve latency and reduce buffer requirements, yet pay a higher fraction of time in seeks and positioning.
+- **Tune to workload**: Batch workloads tolerate large segments; interactive/mobile systems often shrink segments to balance responsiveness and memory limits.
+
+> ⚖️ **Takeaway**: Use the formula as a starting point, then adjust based on latency requirements and available memory.
+
 ---
 
 #### Key Insight from Transcript
@@ -308,6 +315,13 @@ This leads to two scenarios:
 
 *Student Question*: "How often should we run garbage collection?"
 *Instructor Response*: "It's counterintuitive—frequently changing files need *less* frequent garbage collection. Infrequently changing files benefit from more frequent collection."
+
+###### Garbage Collection Policies in Practice
+- Maintain a reserve of clean segments (e.g., 10–20% of disk); trigger GC before falling below the reserve.
+- Focus on **cold** segments with old data to reclaim space efficiently; skip **hot** segments that are likely to change again soon.
+- Run cleaning in the background when the disk is idle to hide the cost from foreground workloads.
+
+> 📉 **Objective**: Keep write amplification low by cleaning segments that already have little live data.
 
 ---
 

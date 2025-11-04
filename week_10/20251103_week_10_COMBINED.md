@@ -300,6 +300,9 @@ When files grow beyond fragment size:
 - Can't always determine correct fix (ambiguous cases)
 - Slow: Must scan entire disk
 - *Instructor Emphasis*: "Consistency is easy... just format the drive. But that's not helpful!"
+- **Recent updates can disappear**: If a file's data never hit disk before the crash, FSCK restores an empty placeholder because it only sees what was persisted.
+- **Partial writes look "fine"**: A torn 4 KB block may contain half-old, half-new data; FSCK has no context to repair it.
+- **Requires downtime**: The volume stays offline for the entire scan—multi-terabyte disks can take hours.
 
 ---
 
@@ -336,8 +339,15 @@ TXB → Update Inode → Update Bitmap → Update Data → TXE
 Checkpoint: Mark as complete
 ```
 
-*Key Insight from Transcript*:  
+*Key Insight from Transcript*:
 > "Hard drives can reorder writes. To prevent this, we split the journal into 'most' and 'tail'—the tail (TXE) is written last to guarantee atomicity."
+
+#### Why Write Ordering Matters
+1. **Device reordering**: Disks and SSDs reorder requests for performance; without barriers, the commit record (TxE) could reach stable storage before the data it promises.
+2. **Barriers/flushes**: Filesystems issue cache flushes or use FUA writes between data blocks and TxE so the controller can't lie about durability.
+3. **Sector atomicity limits**: Only 512-byte sectors are atomic, so TxE is squeezed into one sector to avoid tearing.
+
+> ⚠️ **If ordering fails**: After a crash the journal claims a transaction committed, but replay finds missing data and applies garbage to the live file system.
 
 ---
 

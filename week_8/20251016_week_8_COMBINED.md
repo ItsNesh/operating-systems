@@ -121,6 +121,14 @@ Every file has an **inode** (index node) that contains metadata about the file:
 - Timestamps
 - Pointers to data blocks
 
+**Direct vs. Indirect Pointers**
+- **Direct blocks** (often 12 entries) point straight to data—perfect for files up to ~48 KB with 4 KB blocks.
+- **Single indirect** adds a level of indirection: inode → indirect block → data block (two disk reads if nothing is cached).
+- **Double indirect** introduces another level, useful for multi-megabyte files but costing yet another seek.
+- **Triple indirect** supports huge files but may require five disk accesses (inode + 3 pointer blocks + data) on a cache-cold read.
+
+> 📈 **Practical impact**: Small files stay fast thanks to direct blocks; sequential scans of large files amortize the indirection because the pointer blocks stay cached after the first read.
+
 > "The guy who invented iNodes is like, I don't know, which I found hilarious. He's like, I guess it was index, I don't know."
 
 *Instructor Emphasis*: "Every file on a computer has an inode—this is just going to be a unique number that identifies that file."
@@ -391,7 +399,15 @@ Disk 3: Data C | Parity B
 
 > "For subtractive, I'm gonna read the old value, find the difference between old and new value. Then write to data block and parity block."
 
-*Performance Impact*: 
+**Why a Single-Block Write Takes 4 I/Os**
+1. Read the old data block.
+2. Read the old parity block.
+3. Write the new data block.
+4. Write the updated parity block using `old_parity ⊕ old_data ⊕ new_data`.
+
+> 🔁 Recomputing parity from scratch would require reading every other block in the stripe, so the read-modify-write sequence is the least-bad option for small random writes.
+
+*Performance Impact*:
 ```
 RAID 5 Random Write: N/4 * R
 (Where N = number of disks, R = random access speed)

@@ -657,6 +657,50 @@ The data structure storing all information about a process:
 
 ---
 
+### Deep Dive: How the OS Places Processes in Memory
+
+The OS must reconcile a program's assumptions about its address space with the actual physical memory layout.
+
+1. **Select Safe Physical Frames**
+   - The kernel consults free-frame data structures (bitmaps, buddy allocators) to pick frames that are not already in use.
+   - If contiguous space is required (e.g., in segmented systems), it may need to compact memory or reject the allocation.
+
+2. **Resolve the Relocation Gap**
+   - Executables are often linked as if they begin at address `0x0`.
+   - When the loader maps them elsewhere, all absolute addresses—function pointers, jump tables, global variable references—must
+     either be patched or translated via hardware paging.
+   - Modern OSes prefer paging: the process keeps its convenient virtual addresses while the MMU maps them to the chosen frames.
+
+3. **Install Translation Metadata**
+   - The loader fills page tables (or segment descriptors) that bind each virtual page to its physical frame and sets access bits
+     (read/write/execute).
+   - The CPU's page-table base register is updated so every subsequent memory access uses the new mappings.
+
+> 📌 **Relocation in Practice**: If the `.text` segment expects to call a function at `0x0040_1200` but the OS loads it at
+> `0x9000_0000`, the page-table entry ensures the virtual address still works even though the underlying RAM differs.
+
+### Deep Dive: Work the OS Performs During Process Creation
+
+| Loader Step | Detailed Action | Why It Matters |
+|-------------|-----------------|----------------|
+| Parse executable headers | Identify segment boundaries, permissions, and initial sizes. | Ensures the OS allocates the correct virtual ranges with proper protection. |
+| Allocate frames | Reserve physical memory for code, data, heap, and stack. | Prevents overlapping another process or the kernel. |
+| Fix addresses | Apply relocation records or rely on position-independent code to adjust pointers. | Keeps branch targets and data references consistent after loading. |
+| Populate page tables | Record frame numbers and set lazy-loading bits for demand paging. | Allows faults to bring in pages on first use rather than eagerly loading everything. |
+| Initialize execution context | Set up stack pointer, instruction pointer, and CPU registers before first dispatch. | Gives the scheduler a runnable process with a valid starting state. |
+
+> 🔁 **Takeaway**: Process creation is as much about *address translation* and *metadata setup* as it is about copying bytes.
+
+### Hidden Hardware Costs of Context Switching
+
+- **TLB Flushes**: Switching address spaces invalidates cached translations, forcing slow page-table walks until the TLB warms up.
+- **Cache & Pipeline Disruption**: The next process experiences cold instruction/data caches and must refill CPU pipelines before
+  retiring instructions efficiently.
+- **Measured Overhead**: Saving registers, switching stacks, and updating scheduler state typically costs 1–10 µs (thousands of
+  cycles), so extremely short time slices can spend more time switching than doing useful work.
+
+> ⚠️ **Design implication**: A 1 ms quantum with a 5 µs switch cost burns ~0.5% of CPU time; a 0.1 ms quantum would waste ~5%.
+
 ### Practical Exercise
 Imagine you're designing a simple operating system for a single-core processor:
 

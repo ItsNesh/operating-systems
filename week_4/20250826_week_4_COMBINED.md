@@ -118,6 +118,13 @@ When the CPU needs to translate an address:
 
 *Instructor Insight*: "A TLB miss is like asking for a book in a library and having to check the catalog first—much slower than just knowing where it's on the shelf."
 
+#### What Happens During a TLB Miss?
+1. **Page-table walk**: Hardware-managed CPUs (x86/ARMv8) automatically fetch each page-table level from memory; software-managed CPUs (MIPS/SPARC) trap to the OS, which performs the walk in software.
+2. **Latency impact**: Four memory references at ~100 ns each add ~400 ns before the original access even begins. At 1% miss rate this inflates average access time from ~1 cycle to ~5 cycles; at 5% misses it can exceed 20 cycles.
+3. **Page-fault check**: If the page-table entry marks the page absent, the miss handler must trigger the full page-fault path to fetch it from disk—orders of magnitude slower than a translation miss.
+
+> 🛠️ **Hardware vs. Software**: Hardware-managed TLBs hide the miss machinery but are inflexible. Software-managed TLBs let the OS implement custom replacement policies at the cost of taking a trap on every miss.
+
 #### Content Addressable Memory (CAM)
 Unlike regular memory that uses addresses, CAM searches by content. The TLB uses this principle:
 > *Imagine* checking all entries simultaneously: "Is this address in my cache?" instead of sequentially searching.
@@ -242,6 +249,15 @@ When the TLB is full and a new page needs to be loaded, which existing entry sho
 | **Random** | Randomly evicts a page | Reasonable performance | Very simple |
 
 *Instructor Insight*: "Optimal is the gold standard for comparison, but it's like trying to predict the future—it's impossible to implement."
+
+> ⚙️ **Reality Check**: Perfect LRU would need to update data structures on *every* memory access—billions of operations per second—so real systems approximate it.
+
+#### Practical Approximations in Operating Systems
+- **Clock (Second-Chance)**: Pages live on a circular list with a reference bit. The algorithm clears the bit on first encounter and evicts the first page whose bit is already clear.
+- **Aging / Not Frequently Used**: Periodically shift reference bits into a counter to rank pages by recent use.
+- **Two-Queue (2Q)**: Keep "seen once" and "seen often" queues to guard frequently reused pages while still sampling new ones.
+
+> 📌 **Takeaway**: Textbook algorithms teach the trade-offs, but production kernels rely on lightweight approximations that play nicely with hardware support.
 
 #### Optimal Algorithm Example
 Given sequence: `1, 5, 4, 3, 2, 1, 2, 4, 3, 1, 3, 4, 2, 1` (with only 4 TLB slots)
