@@ -761,7 +761,7 @@ graph LR
     A[User Process] -->|Traps via trap instruction| B(Trap Handler)
     B --> C{Valid System Call?}
     C -->|Yes| D[Kernel Performs Operation]
-    D --> E(Return-from-Trap to User Mode)]
+    D --> E[Return-from-Trap to User Mode]
 ```
 
 ##### **Step-by-Step Workflow**  
