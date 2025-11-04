@@ -152,14 +152,14 @@ When a long job arrives first, it "blocks" shorter jobs that arrive later.
 | Job | Arrival Time | Burst Time | Completion Time | Turnaround Time | Response Time |
 |-----|--------------|------------|-----------------|-----------------|---------------|
 | A   | 0            | 10         | 10              | 10              | 0             |
-| B   | 2            | 10         | 18              | 18              | 8             |
-| C   | 4            | 10         | 26              | 26              | 16            |
+| B   | 2            | 10         | 20              | 18              | 8             |
+| C   | 4            | 10         | 30              | 26              | 16            |
 
 **Average Response Time**: (0 + 8 + 16) / 3 = **8**
 
 > *Instructor Insight*: "STCF is preemptive, meaning it can interrupt a running process to run a shorter one. This gives better response times but requires more context switching."
 
-> **Additional Explanation (not in source_files)**: Completion time is the clock reading when a job finishes. Turnaround time is completion minus arrival. The slide deck assumes every job arrives at time 0, so the two columns match. If you instead respect the arrival times shown here (0, 2, 4), the turnaround values become 10, 16, and 22 seconds even though the completion times are still 10, 18, and 26. Always subtract the arrival time when solving exam problems.
+> **Additional Explanation (not in source_files)**: Completion time is the clock reading when a job finishes. Turnaround time is completion minus arrival. With arrivals at 0, 2, and 4 seconds, the turnaround values are 10, 18, and 26 seconds even though the completion times are 10, 20, and 30. Always subtract the arrival time when solving exam problems.
 
 ---
 
@@ -170,12 +170,14 @@ When a long job arrives first, it "blocks" shorter jobs that arrive later.
 | Job | Arrival Time | Burst Time | Completion Time | Turnaround Time | Response Time |
 |-----|--------------|------------|-----------------|-----------------|---------------|
 | A   | 0            | 10         | 26              | 26              | 0             |
-| B   | 2            | 10         | 26              | 26              | 0             |
-| C   | 4            | 10         | 26              | 26              | 0             |
+| B   | 2            | 10         | 28              | 26              | 0             |
+| C   | 4            | 10         | 30              | 26              | 0             |
 
 **Average Response Time**: (0 + 0 + 0) / 3 = **0**
 
 > *Instructor Insight*: "Round Robin gives everyone a fair chance, but it can lead to long turnaround times if the time slice is too short. The key challenge is determining how often to switch between processes."
+
+> **Assumptions for This Example**: Using a 2 ms time slice (with zero context-switch cost) causes each job to receive five quanta before finishing, so their completion times land at 26 ms, 28 ms, and 30 ms respectively.
 
 ##### Picking a Time Quantum That Works
 > **Additional Explanation (not in source_files)**

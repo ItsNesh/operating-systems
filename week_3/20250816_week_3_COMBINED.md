@@ -129,18 +129,20 @@ Instead of one giant page table, use multiple smaller tables that point to each 
 | Level 2 | 10   | Index into second-level page table |
 | Offset  | 12   | Within-page offset |
 
-**Visual Example from Lecture**:
+**Worked 32-bit Example**:
 ```
-Virtual Address: 0x3C6B (binary: 0011 1100 0110 1011)
-Split as: [0011110001] [101011] [000000000000]
+Virtual Address: 0x12345678
+Binary:          0001 0010 0011 0100 0101 0110 0111 1000
+Split as:        [0001001000] [1101000101] [011001111000]
+                   10 bits        10 bits        12 bits
 ```
 
 **Process Flow**:
-1. Use first 10 bits (0011110001) to find entry in top-level table
-2. The value at that entry points to a second page table (e.g., ABBA)
-3. Use next 10 bits (101011) to find the specific page within that table
-4. Value found is BEFF, which contains the actual physical address
-5. Final offset (12 bits) locates the exact byte
+1. Use the first 10 bits (`0001001000₂ = 72₁₀`) to index the top-level page directory.
+2. The directory entry stores the physical address of a second-level page table (for example, at base address `0xABBA0000`).
+3. Use the next 10 bits (`1101000101₂ = 837₁₀`) to index within that second-level table and read the page-table entry.
+4. The page-table entry provides the physical frame number (e.g., `0x000BEFF0`).
+5. Append the 12-bit offset (`0x678`) to that frame number, yielding the final physical address `0x000BF568`.
 
 #### Key Insight from Transcript
 > "Multi-level paging solves the problem by making each level small enough to be manageable while still allowing access to all possible addresses."
