@@ -126,7 +126,7 @@ The instructor explains:
 - Spin locks are bad when waiting long, but good when wait times are short
 - Ticket locks solve fairness issues with spin locks by implementing a queueing system (first-in-first-out)
 - The key insight: "When you have multiple threads trying to access shared resources, you need mechanisms that ensure only one thread can access the resource at any given time"
-- For condition variables: "The signal function also has to unlock the mutex by default" - this is crucial for understanding how they work
+- For condition variables: "`pthread_cond_wait()` releases the mutex while sleeping; `pthread_cond_signal()` simply wakes a waiter and keeps the mutex locked" - this is crucial for understanding how they work
 - Pipes are a classic example of producer/consumer pattern using condition variables
 
 Now I'll structure all these concepts into comprehensive notes, following the formatting requirements.
